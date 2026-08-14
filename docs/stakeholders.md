@@ -1,4 +1,3 @@
-markdown
 # Stakeholders
 
 _Identificar y justificar las partes interesadas relevantes para el sistema._  
