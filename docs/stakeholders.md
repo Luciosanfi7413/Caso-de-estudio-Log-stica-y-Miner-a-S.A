@@ -1,4 +1,4 @@
-```markdown
+markdown
 # Stakeholders
 
 _Identificar y justificar las partes interesadas relevantes para el sistema._  
@@ -58,4 +58,3 @@ _Para cada una: describir su rol y por qué es clave para el proyecto._
 | Empleados solicitantes | Interno | Alto |
 | Responsables de área / Mandos medios | Interno | Medio |
 | Proveedores y especialistas externos | Externo | Medio |
-```
