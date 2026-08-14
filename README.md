@@ -4,6 +4,7 @@
 > Institución: Terciario Urquiza — Rosario  
 > Docente: Pedernera Pablo  
 > Cuatrimestre: 2.° 2026
+> 3°1 
 
 ## Integrantes
 
