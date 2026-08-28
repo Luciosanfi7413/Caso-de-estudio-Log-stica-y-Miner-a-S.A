@@ -17,6 +17,7 @@ considerarse "lista para trabajar". Si no las cumple, vuelve a refinamiento._
 | 4 | | |
 | 5 | | |
 | 6 | | |
+| 7 | | |
 
 ---
 
