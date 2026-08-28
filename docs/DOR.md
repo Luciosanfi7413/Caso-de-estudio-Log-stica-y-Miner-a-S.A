@@ -35,6 +35,7 @@ _Eligir TRES historias de usuario del trabajo del primer semestre y páspasarlas
 | 4 | | |
 | 5 | | |
 | 6 | | |
+| 7 | | |
 
 ---
 
@@ -48,6 +49,7 @@ _Eligir TRES historias de usuario del trabajo del primer semestre y páspasarlas
 | 4 | | |
 | 5 | | |
 | 6 | | |
+| 7 | | |
 
 ---
 
@@ -61,3 +63,4 @@ _Eligir TRES historias de usuario del trabajo del primer semestre y páspasarlas
 | 4 | | |
 | 5 | | |
 | 6 | | |
+| 7 | | |
