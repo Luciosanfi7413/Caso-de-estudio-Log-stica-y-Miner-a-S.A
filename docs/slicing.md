@@ -11,13 +11,13 @@
 
 ## Parte A — Historias verticales
 
-_1-Reportar una incidencia_
-_2-Lista de incidencias reportadas por parte del solicitante._
-_3-Asignación de un ticket a un responsable._
-_4-Derivación del ticket a otro responsable._
-_5-Lista de incidencias asignadas a uno mismo._
-_6-Cambiar estado de ticket a “en curso”._
-_7-Cambiar estado de ticket a “cerrada”._
+1. Reportar una incidencia.
+2. Lista de incidencias reportadas por parte del solicitante.
+3. Asignación de un ticket a un responsable.
+4. Derivación del ticket a otro responsable.
+5. Lista de incidencias asignadas a uno mismo.
+6. Cambiar estado de ticket a "en curso".
+7. Cambiar estado de ticket a "cerrada".
 
 ### Historia 1 — [Nombre]
 
