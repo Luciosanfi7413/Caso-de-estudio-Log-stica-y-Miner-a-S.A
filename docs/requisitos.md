@@ -38,14 +38,15 @@ La solución permitirá registrar, consultar, asignar, priorizar y realizar el s
 | RF-11 | El sistema debe permitir al Responsable de Sistemas establecer la prioridad de una incidencia utilizando criterios definidos de urgencia e impacto. |
 | RF-12 | El sistema debe permitir al Responsable de Sistemas actualizar el estado de una incidencia durante su gestión. Cuando se produzca un cambio de estado, el sistema deberá informar al Solicitante. |
 | RF-13 | El sistema debe permitir al Responsable de Sistemas asignar o reasignar la responsabilidad de una incidencia a un responsable interno o a un Especialista Externo autorizado. Cuando cambie el responsable, el sistema deberá informar al Solicitante. |
+| RF-14 | Aceptar o rechazar asignación externa: El sistema debe permitir al Especialista Externo aceptar o rechazar una incidencia que le haya sido asignada. |
 
 ### Módulo 5 — Resolución e historial de intervenciones
 
 | ID | Requisito |
 |----|-----------|
-| RF-14 | El sistema debe permitir al Responsable de Sistemas registrar las acciones realizadas durante la atención de una incidencia, conservando la información como parte de su historial. |
-| RF-15 | El sistema debe permitir al Especialista Externo registrar avances, diagnósticos, acciones realizadas y la solución aplicada en las incidencias que se encuentren bajo su responsabilidad. |
-| RF-16 | El sistema debe permitir al Responsable de Sistemas registrar la resolución final y cerrar una incidencia una vez finalizada su atención. La solución deberá conservarse junto con el historial de la incidencia. |
+| RF-15 | El sistema debe permitir al Responsable de Sistemas registrar las acciones realizadas durante la atención de una incidencia, conservando la información como parte de su historial. |
+| RF-16 | El sistema debe permitir al Especialista Externo registrar avances, diagnósticos, acciones realizadas y la solución aplicada en las incidencias que se encuentren bajo su responsabilidad. |
+| RF-17 | El sistema debe permitir al Responsable de Sistemas registrar la resolución final y cerrar una incidencia una vez finalizada su atención. La solución deberá conservarse junto con el historial de la incidencia. |
 
 ## Requisitos no funcionales
 
@@ -61,35 +62,36 @@ La solución permitirá registrar, consultar, asignar, priorizar y realizar el s
 | ID | Requisito |
 |----|-----------|
 | RNF-03 | La solución deberá permitir recuperar la información ante una pérdida o falla del entorno donde se encuentre almacenada. Ante una pérdida total simulada, la pérdida máxima de información admitida será de 24 horas y el servicio deberá poder restablecerse en un plazo máximo de 4 horas. |
+| RNF-04 | El sistema deberá conservar el historial completo de cada incidencia, incluyendo cambios de estado, asignaciones, acciones, intervenciones externas y resolución, durante un período de 2 años desde el cierre de la incidencia.|
 
 ### Usabilidad
 
 | ID | Requisito |
 |----|-----------|
-| RNF-04 | La interfaz deberá presentarse completamente en idioma español. El 100 % de las pantallas utilizadas por Solicitantes, Choferes, Responsable de Sistemas y Especialistas Externos deberá presentar títulos, campos, acciones, mensajes de validación y notificaciones en español. |
-| RNF-05 | El proceso de registro de una incidencia deberá poder realizarse de manera simple y con una cantidad reducida de pasos. En una prueba con usuarios, un Solicitante deberá poder registrar una incidencia básica en un máximo de 2 minutos sin recibir asistencia durante la operación. |
+| RNF-05 | La interfaz deberá presentarse completamente en idioma español. El 100 % de las pantallas utilizadas por Solicitantes, Choferes, Responsable de Sistemas y Especialistas Externos deberá presentar títulos, campos, acciones, mensajes de validación y notificaciones en español. |
+| RNF-06 | El proceso de registro de una incidencia deberá poder realizarse de manera simple y con una cantidad reducida de pasos. En una prueba con usuarios, un Solicitante deberá poder registrar una incidencia básica en un máximo de 2 minutos sin recibir asistencia durante la operación. |
 
 ### Usabilidad móvil
 
 | ID | Requisito |
 |----|-----------|
-| RNF-06 | La solución deberá brindar una interfaz adecuada para los usuarios que registran incidencias desde dispositivos móviles. En una pantalla de 360 px de ancho o superior, el usuario deberá poder visualizar y completar el registro sin desplazamiento horizontal y acceder a las acciones necesarias para adjuntar información y confirmar la operación. |
+| RNF-07 | La solución deberá brindar una interfaz adecuada para los usuarios que registran incidencias desde dispositivos móviles. En una pantalla de 360 px de ancho o superior, el usuario deberá poder visualizar y completar el registro sin desplazamiento horizontal y acceder a las acciones necesarias para adjuntar información y confirmar la operación. |
 
 ### Rendimiento y capacidad
 
 | ID | Requisito |
 |----|-----------|
-| RNF-07 | Con hasta 50 usuarios conectados simultáneamente, al menos el 95 % de las operaciones de apertura de listados, consulta de una incidencia y guardado de cambios deberá completarse en un máximo de 3 segundos, excluyendo la transferencia de archivos adjuntos. |
-| RNF-08 | Con 50 usuarios simultáneos realizando operaciones habituales, el sistema deberá mantener los límites de respuesta establecidos en RNF-06 y no deberá producir errores atribuibles a falta de capacidad del servicio. |
+| RNF-08 | Con hasta 50 usuarios conectados simultáneamente, al menos el 95 % de las operaciones de apertura de listados, consulta de una incidencia y guardado de cambios deberá completarse en un máximo de 3 segundos, excluyendo la transferencia de archivos adjuntos. |
+| RNF-09 | Con 50 usuarios simultáneos realizando operaciones habituales, el sistema deberá mantener los límites de respuesta establecidos en RNF-06 y no deberá producir errores atribuibles a falta de capacidad del servicio. |
 
 ### Compatibilidad
 
 | ID | Requisito |
 |----|-----------|
-| RNF-09 | Las funciones principales de la interfaz web deberán poder ejecutarse correctamente en las dos últimas versiones estables de Chrome, Edge, Firefox y Safari, sin pérdida de funcionalidad. |
+| RNF-10 | Las funciones principales de la interfaz web deberán poder ejecutarse correctamente en las dos últimas versiones estables de Chrome, Edge, Firefox y Safari, sin pérdida de funcionalidad. |
 
 ### Gestión de errores
 
 | ID | Requisito |
 |----|-----------|
-| RNF-10 | Cuando una operación no pueda completarse por datos faltantes o inválidos, el mensaje de validación deberá identificar el campo o dato involucrado y el motivo del rechazo, evitando mensajes genéricos que no permitan determinar la causa. |
+| RNF-11 | Cuando una operación no pueda completarse por datos faltantes o inválidos, el mensaje de validación deberá identificar el campo o dato involucrado y el motivo del rechazo, evitando mensajes genéricos que no permitan determinar la causa. |
