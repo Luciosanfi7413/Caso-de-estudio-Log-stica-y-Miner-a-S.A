@@ -2,19 +2,22 @@
 
 ## La épica
 
-> Como usuario de la billetera, quiero enviar dinero a otro usuario de la app para pagarle
-> sin usar efectivo.
+> Ciclo completo de un ticket, desde apertura hasta cierre con derivación externa.
 
-_Así como está, es una épica gorda: no se puede estimar, no se puede terminar en una
-iteración, y esconde decisiones que nadie tomó todavía._
+
+
 
 ---
 
 ## Parte A — Historias verticales
 
-_Entre 5 y 8 historias VERTICALES. Vertical significa que cada historia, sola, entrega algo
-usable de punta a punta ("diseñar la pantalla de envío" no es vertical; "enviar dinero a un
-contacto de la agenda con saldo suficiente" sí lo es)._
+_1-Reportar una incidencia
+2-Lista de incidencias reportadas por parte del solicitante
+3-Asignación de un ticket a un responsable
+4-Derivación del ticket a otro responsable
+5-Lista de incidencias asignadas a uno mismo
+6-Cambiar estado de ticket a “en curso”
+7-Cambiar estado de ticket a “cerrada”_
 
 ### Historia 1 — [Nombre]
 
