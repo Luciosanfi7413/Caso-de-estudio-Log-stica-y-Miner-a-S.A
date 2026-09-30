@@ -266,7 +266,7 @@ Verificable	Sí	Se prueban el registro, las validaciones, el identificador y el 
 | Campo | Detalle |
 |-------|---------|
 | Historia | Como Responsable de Sistemas, quiero asignar una prioridad a una incidencia según su urgencia e impacto, para ordenar su atención. |
-| Módulo 4 — Gestión y asignación de incidencias |
+| Módulo |Módulo 4 — Gestión y asignación de incidencias|
 | Requisitos relacionados |RF-11|
 
 ### Criterios de aceptación
@@ -289,196 +289,196 @@ Verificable	Sí	Se prueban el registro, las validaciones, el identificador y el 
 
 ---
 
-## HU-11 — [Registrar y habilitar un especialista externo]
+## HU-11 — [Actualizar el estado de una incidencia como responsable de sistemas]
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Responsable de Sistemas, quiero registrar y habilitar a un Especialista Externo, para que pueda ser asignado a la gestión de incidencias. |
-| Módulo |Módulo 1 — Acceso y gestión de usuarios |
-| Requisitos relacionados |RF-02|
+| Historia | Como Responsable de Sistemas, quiero actualizar el estado de una incidencia, para reflejar su evolución e informar al Solicitante. |
+| Módulo |Módulo 4 — Gestión y asignación de incidencias|
+| Requisitos relacionados |RF-12|
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir registrar los datos requeridos del Especialista Externo.
-2. El sistema deberá validar que el correo electrónico no esté asociado a otro especialista registrado.
-3. Al confirmar el registro, el sistema deberá dejar al especialista habilitado y disponible para nuevas asignaciones.
-4. El sistema deberá permitir que haya varios Especialistas Externos habilitados simultáneamente.
+1. El sistema deberá permitir al Responsable de Sistemas seleccionar un estado habilitado para la incidencia.
+2. Antes de guardar, el sistema deberá mostrar el estado actual y el nuevo estado seleccionado.
+3. Al confirmar, el sistema deberá actualizar la incidencia y registrar el cambio en su historial.
+4. El sistema deberá informar al Solicitante sobre el nuevo estado.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Puede implementarse aparte del flujo de atención de una incidencia. |
-| Negociable |Si | El resultado está definido y los detalles de implementación pueden acordarse.|
-| Valiosa |Si |Incorpora especialistas que pueden atender incidencias. |
-| Estimable |Si |El alcance se limita al registro y habilitación. |
-| Pequeña |Si | No incluye la revocación de acceso, que se trata en otra historia.|
-| Verificable |Si | Se comprueban el registro, la validación del correo y la disponibilidad para asignación.|
+| Independiente |Si |El cambio de estado es distinto de priorizar o asignar una incidencia. |
+| Negociable |Si | La necesidad está definida; el mecanismo de notificación puede acordarse.|
+| Valiosa |Si |Mantiene actualizado el seguimiento e informa al Solicitante. |
+| Estimable |Si |Incluye selección, registro del cambio y notificación.|
+| Pequeña |Si |No incluye asignación ni registro de una resolución final.|
+| Verificable |Si | Se comprueban el nuevo estado, el historial y la notificación.|
 
 ---
 
-## HU-12 — [Registrar y habilitar un especialista externo]
+## HU-12 — [Asignar o reasignar el responsable]
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Responsable de Sistemas, quiero registrar y habilitar a un Especialista Externo, para que pueda ser asignado a la gestión de incidencias. |
-| Módulo |Módulo 1 — Acceso y gestión de usuarios |
-| Requisitos relacionados |RF-02|
+| Historia | Como Responsable de Sistemas, quiero asignar o reasignar una incidencia a un responsable interno o a un Especialista Externo habilitado, para definir quién estará a cargo de su atención. |
+| Módulo |Módulo 4 — Gestión y asignación de incidencias |
+| Requisitos relacionados |RF-13|
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir registrar los datos requeridos del Especialista Externo.
-2. El sistema deberá validar que el correo electrónico no esté asociado a otro especialista registrado.
-3. Al confirmar el registro, el sistema deberá dejar al especialista habilitado y disponible para nuevas asignaciones.
-4. El sistema deberá permitir que haya varios Especialistas Externos habilitados simultáneamente.
+1. El sistema deberá permitir seleccionar una incidencia y consultar su responsable actual, si lo tiene.
+2. El sistema deberá permitir elegir entre un responsable interno y un Especialista Externo habilitado.
+3. Si se elige un Especialista Externo, el sistema deberá mostrar únicamente especialistas habilitados para nuevas asignaciones.
+4. Al confirmar, el sistema deberá asociar el nuevo responsable, registrar el cambio e informar al Solicitante.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Puede implementarse aparte del flujo de atención de una incidencia. |
-| Negociable |Si | El resultado está definido y los detalles de implementación pueden acordarse.|
-| Valiosa |Si |Incorpora especialistas que pueden atender incidencias. |
-| Estimable |Si |El alcance se limita al registro y habilitación. |
-| Pequeña |Si | No incluye la revocación de acceso, que se trata en otra historia.|
-| Verificable |Si | Se comprueban el registro, la validación del correo y la disponibilidad para asignación.|
+| Independiente |Si |La asignación es una operación distinta del estado y la prioridad. |
+| Negociable |Si | El resultado está definido; la organización de la selección puede acordarse.|
+| Valiosa |Si |Identifica quién se ocupará de cada incidencia. |
+| Estimable |Si |Incluye responsables internos, externos habilitados y notificación. |
+| Pequeña |Si | Revisar si la selección de varios tipos de responsables amplía demasiado el alcance.|
+| Verificable |Si | Se prueban asignación, reasignación, filtro de especialistas e información al Solicitante.|
 
 ---
 
-## HU-13 — [Registrar y habilitar un especialista externo]
+## HU-13 — [Aceptar o rechazar una asignación externa]
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Responsable de Sistemas, quiero registrar y habilitar a un Especialista Externo, para que pueda ser asignado a la gestión de incidencias. |
-| Módulo |Módulo 1 — Acceso y gestión de usuarios |
-| Requisitos relacionados |RF-02|
+| Historia | Como Especialista Externo, quiero aceptar o rechazar una incidencia asignada, para confirmar si puedo hacerme cargo de su atención. |
+| Módulo |Módulo 4 — Gestión y asignación de incidencias |
+| Requisitos relacionados |RF-14|
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir registrar los datos requeridos del Especialista Externo.
-2. El sistema deberá validar que el correo electrónico no esté asociado a otro especialista registrado.
-3. Al confirmar el registro, el sistema deberá dejar al especialista habilitado y disponible para nuevas asignaciones.
-4. El sistema deberá permitir que haya varios Especialistas Externos habilitados simultáneamente.
+1. El sistema deberá mostrar al Especialista Externo las incidencias que esperan su respuesta de asignación.
+2. El sistema deberá permitir aceptar o rechazar cada asignación.
+3. El sistema deberá registrar la decisión del Especialista Externo y mostrar el resultado de la operación.
+4. El sistema deberá reflejar la decisión para que el Responsable de Sistemas pueda continuar la gestión.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Puede implementarse aparte del flujo de atención de una incidencia. |
-| Negociable |Si | El resultado está definido y los detalles de implementación pueden acordarse.|
-| Valiosa |Si |Incorpora especialistas que pueden atender incidencias. |
-| Estimable |Si |El alcance se limita al registro y habilitación. |
-| Pequeña |Si | No incluye la revocación de acceso, que se trata en otra historia.|
-| Verificable |Si | Se comprueban el registro, la validación del correo y la disponibilidad para asignación.|
+| Independiente |Si |La respuesta del especialista es una acción separada de la asignación inicial. |
+| Negociable |Si |La necesidad está definida; la forma de presentar la decisión puede acordarse.|
+| Valiosa |Si |Permite confirmar si el especialista se hará cargo de la incidencia. |
+| Estimable |Si |Falta definir qué ocurre con la incidencia cuando la asignación se rechaza.|
+| Pequeña |Si | Se limita a aceptar o rechazar una asignación.|
+| Verificable |Si | Se comprueba que ambas decisiones quedan registradas y visibles para Sistemas.|
 
 ---
 
-## HU-14 — [Registrar y habilitar un especialista externo]
+## HU-14 — [Actualizar el estado como especialista externo]
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Responsable de Sistemas, quiero registrar y habilitar a un Especialista Externo, para que pueda ser asignado a la gestión de incidencias. |
-| Módulo |Módulo 1 — Acceso y gestión de usuarios |
-| Requisitos relacionados |RF-02|
+| Historia | Como Especialista Externo, quiero actualizar el estado de una incidencia que tengo asignada, para reflejar el avance de su atención. |
+| Módulo |Módulo 4 — Gestión y asignación de incidencias |
+| Requisitos relacionados |RF-12; CU-11|
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir registrar los datos requeridos del Especialista Externo.
-2. El sistema deberá validar que el correo electrónico no esté asociado a otro especialista registrado.
-3. Al confirmar el registro, el sistema deberá dejar al especialista habilitado y disponible para nuevas asignaciones.
-4. El sistema deberá permitir que haya varios Especialistas Externos habilitados simultáneamente.
+1. El sistema deberá permitir al Especialista Externo modificar el estado únicamente de incidencias que tenga asignadas.
+2. El sistema deberá ofrecer los estados habilitados para este actor: En curso, Pendiente y Resuelto.
+3. El sistema deberá permitir revisar el nuevo estado antes de guardar.
+4. Al confirmar, el sistema deberá actualizar el estado y registrar el cambio en el historial.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Puede implementarse aparte del flujo de atención de una incidencia. |
-| Negociable |Si | El resultado está definido y los detalles de implementación pueden acordarse.|
-| Valiosa |Si |Incorpora especialistas que pueden atender incidencias. |
-| Estimable |Si |El alcance se limita al registro y habilitación. |
-| Pequeña |Si | No incluye la revocación de acceso, que se trata en otra historia.|
-| Verificable |Si | Se comprueban el registro, la validación del correo y la disponibilidad para asignación.|
+| Independiente |Si |Es una acción del especialista distinta de la actualización realizada por Sistemas. |
+| Negociable |Si | El objetivo está definido; la interacción puede acordarse.|
+| Valiosa |Si |Permite reflejar directamente el avance de la atención externa. |
+| Estimable |Si |Se limita a incidencias asignadas y estados habilitados. |
+| Pequeña |Si | No incluye cambiar responsable ni prioridad.|
+| Verificable |Si | Se comprueban permisos, estados disponibles y registro del cambio.|
 
 ---
 
-## HU-15 — [Registrar y habilitar un especialista externo]
+## HU-15 — [Registrar acciones realizadas por el responsable de sistemas]
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Responsable de Sistemas, quiero registrar y habilitar a un Especialista Externo, para que pueda ser asignado a la gestión de incidencias. |
-| Módulo |Módulo 1 — Acceso y gestión de usuarios |
-| Requisitos relacionados |RF-02|
+| Historia | Como Responsable de Sistemas, quiero registrar las acciones realizadas durante la atención, para conservarlas en el historial de la incidencia.|
+| Módulo |Módulo 5 — Resolución e historial de intervenciones |
+| Requisitos relacionados |RF-15|
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir registrar los datos requeridos del Especialista Externo.
-2. El sistema deberá validar que el correo electrónico no esté asociado a otro especialista registrado.
-3. Al confirmar el registro, el sistema deberá dejar al especialista habilitado y disponible para nuevas asignaciones.
-4. El sistema deberá permitir que haya varios Especialistas Externos habilitados simultáneamente.
+1. El sistema deberá permitir al Responsable de Sistemas registrar una descripción de la acción realizada en una incidencia no cerrada.
+2. El sistema deberá impedir la confirmación si la descripción está vacía.
+3. Al confirmar, el sistema deberá asociar el registro a la incidencia y al Responsable de Sistemas que lo realizó.
+4. El sistema deberá incorporar la acción al historial sin cambiar el estado de la incidencia.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Puede implementarse aparte del flujo de atención de una incidencia. |
-| Negociable |Si | El resultado está definido y los detalles de implementación pueden acordarse.|
-| Valiosa |Si |Incorpora especialistas que pueden atender incidencias. |
-| Estimable |Si |El alcance se limita al registro y habilitación. |
-| Pequeña |Si | No incluye la revocación de acceso, que se trata en otra historia.|
-| Verificable |Si | Se comprueban el registro, la validación del correo y la disponibilidad para asignación.|
+| Independiente |Si |El registro de acciones puede desarrollarse aparte del cierre de la incidencia. |
+| Negociable |Si | El objetivo y los datos mínimos están definidos.|
+| Valiosa |Si |Conserva las intervenciones realizadas para el seguimiento. |
+| Estimable |Si |Incluye descripción, validación y asociación al historial.|
+| Pequeña |Si | Se limita a registrar una acción realizada.|
+| Verificable |Si | Se comprueba la validación, la asociación y que el estado no cambie.|
 
 ---
 
-## HU-16 — [Registrar y habilitar un especialista externo]
+## HU-16 — [Registrar intervenciones del especialista externo]
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Responsable de Sistemas, quiero registrar y habilitar a un Especialista Externo, para que pueda ser asignado a la gestión de incidencias. |
-| Módulo |Módulo 1 — Acceso y gestión de usuarios |
-| Requisitos relacionados |RF-02|
+| Historia | Como Especialista Externo, quiero registrar avances, diagnósticos, acciones realizadas o la solución aplicada, para documentar el tratamiento de las incidencias que tengo asignadas. |
+| Módulo |Módulo 5 — Resolución e historial de intervenciones|
+| Requisitos relacionados |RF-16|
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir registrar los datos requeridos del Especialista Externo.
-2. El sistema deberá validar que el correo electrónico no esté asociado a otro especialista registrado.
-3. Al confirmar el registro, el sistema deberá dejar al especialista habilitado y disponible para nuevas asignaciones.
-4. El sistema deberá permitir que haya varios Especialistas Externos habilitados simultáneamente.
+1. El sistema deberá permitir al Especialista Externo registrar información únicamente en incidencias que tenga asignadas.
+2. El sistema deberá permitir clasificar el registro como avance, diagnóstico, acción realizada o solución, según los tipos definidos.
+3. El sistema deberá exigir una descripción antes de confirmar el registro.
+4. Al confirmar, el sistema deberá asociar el tipo, la descripción, la incidencia y el Especialista Externo al historial correspondiente.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Puede implementarse aparte del flujo de atención de una incidencia. |
-| Negociable |Si | El resultado está definido y los detalles de implementación pueden acordarse.|
-| Valiosa |Si |Incorpora especialistas que pueden atender incidencias. |
-| Estimable |Si |El alcance se limita al registro y habilitación. |
-| Pequeña |Si | No incluye la revocación de acceso, que se trata en otra historia.|
-| Verificable |Si | Se comprueban el registro, la validación del correo y la disponibilidad para asignación.|
+| Independiente |Si |El registro de intervenciones externas es distinto del registro realizado por Sistemas. |
+| Negociable |Si |Los tipos requeridos están identificados; la presentación puede acordarse.|
+| Valiosa |Si |Permite dar seguimiento al trabajo realizado por especialistas externos. |
+| Estimable |Si |Incluye selección del tipo, descripción y asociación al historial. |
+| Pequeña |Si | Si cada tipo requiere reglas distintas, convendría dividir la historia.|
+| Verificable |Si | Se prueban los tipos, la obligatoriedad de la descripción y la asociación al historial.|
 
 ---
 
-## HU-17 — [Registrar y habilitar un especialista externo]
+## HU-17 — [Registrar la resolución final y cerrar una incidencia]
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Responsable de Sistemas, quiero registrar y habilitar a un Especialista Externo, para que pueda ser asignado a la gestión de incidencias. |
-| Módulo |Módulo 1 — Acceso y gestión de usuarios |
-| Requisitos relacionados |RF-02|
+| Historia | Como Responsable de Sistemas, quiero registrar la resolución final de una incidencia y cerrarla, para dejar constancia de su solución y finalizar su gestión. |
+| Módulo |Módulo 5 — Resolución e historial de intervenciones |
+| Requisitos relacionados |RF-17|
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir registrar los datos requeridos del Especialista Externo.
-2. El sistema deberá validar que el correo electrónico no esté asociado a otro especialista registrado.
-3. Al confirmar el registro, el sistema deberá dejar al especialista habilitado y disponible para nuevas asignaciones.
-4. El sistema deberá permitir que haya varios Especialistas Externos habilitados simultáneamente.
+1. El sistema deberá permitir registrar una resolución final cuando la incidencia esté en condiciones de ser cerrada.
+2. El sistema deberá exigir la descripción de la resolución final antes de confirmar.
+3. Al confirmar, el sistema deberá incorporar la resolución al historial y establecer el estado de la incidencia como Cerrado.
+4. El sistema deberá informar al Solicitante sobre el cierre de la incidencia.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Puede implementarse aparte del flujo de atención de una incidencia. |
-| Negociable |Si | El resultado está definido y los detalles de implementación pueden acordarse.|
-| Valiosa |Si |Incorpora especialistas que pueden atender incidencias. |
-| Estimable |Si |El alcance se limita al registro y habilitación. |
-| Pequeña |Si | No incluye la revocación de acceso, que se trata en otra historia.|
-| Verificable |Si | Se comprueban el registro, la validación del correo y la disponibilidad para asignación.|
+| Independiente |Si |El cierre puede implementarse aparte del registro de acciones intermedias. |
+| Negociable |Si | El resultado está definido; los detalles de confirmación pueden acordarse.|
+| Valiosa |Si |Finaliza formalmente la gestión y conserva su solución. |
+| Estimable |Si |Incluye resolución final, cierre e información al Solicitante. |
+| Pequeña |Si | Si el flujo de resolución tiene varias reglas adicionales, revisar su división.|
+| Verificable |Si | Se comprueban la descripción obligatoria, el estado Cerrado y la notificación.|
