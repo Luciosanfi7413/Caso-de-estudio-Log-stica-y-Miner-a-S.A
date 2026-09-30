@@ -7,7 +7,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 1 — CU-01 — Registro de incidencia
 
-**Wireframe:** `diagramas/wireframes/CU001-registro-de-incidencia.pdf`
+**Wireframe:** [`diagramas/wireframes/CU001-registro-de-incidencia.pdf`](diagramas/wireframes/CU001-registro-de-incidencia.pdf)
 
 **Patrones de diseño utilizados:** Formulario con campos dependientes, validación junto al campo y pantalla de confirmación.
 
@@ -20,7 +20,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 ---
 ## Pantalla / Módulo 2 — CU-02 — Detalle de incidencia
 
-**Wireframe:** `diagramas/wireframes/CU002-consulta-de-incidencias.pdf`
+**Wireframe:** [`diagramas/wireframes/CU002-consulta-de-incidencias.pdf`](diagramas/wireframes/CU002-consulta-de-incidencias.pdf)
 
 **Patrones de diseño utilizados:** Vista de detalle organizada por bloques y visualización del archivo adjunto.
 
