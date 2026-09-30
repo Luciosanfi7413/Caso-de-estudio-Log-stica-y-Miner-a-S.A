@@ -261,31 +261,31 @@ Verificable	Sí	Se prueban el registro, las validaciones, el identificador y el 
 
 ---
 
-## HU-10 — [Registrar y habilitar un especialista externo]
+## HU-10 — [Asignar prioridad a una incidencia]
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Responsable de Sistemas, quiero registrar y habilitar a un Especialista Externo, para que pueda ser asignado a la gestión de incidencias. |
-| Módulo |Módulo 1 — Acceso y gestión de usuarios |
-| Requisitos relacionados |RF-02|
+| Historia | Como Responsable de Sistemas, quiero asignar una prioridad a una incidencia según su urgencia e impacto, para ordenar su atención. |
+| Módulo 4 — Gestión y asignación de incidencias |
+| Requisitos relacionados |RF-11|
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir registrar los datos requeridos del Especialista Externo.
-2. El sistema deberá validar que el correo electrónico no esté asociado a otro especialista registrado.
-3. Al confirmar el registro, el sistema deberá dejar al especialista habilitado y disponible para nuevas asignaciones.
-4. El sistema deberá permitir que haya varios Especialistas Externos habilitados simultáneamente.
+1. El sistema deberá permitir indicar los valores de urgencia e impacto definidos para la incidencia.
+2. El sistema deberá permitir asignar una prioridad de acuerdo con los criterios definidos para combinar urgencia e impacto.
+3. Antes de guardar, el sistema deberá mostrar los valores seleccionados para su revisión.
+4. El sistema deberá guardar la prioridad asociada a la incidencia y mostrar el resultado actualizado.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Puede implementarse aparte del flujo de atención de una incidencia. |
-| Negociable |Si | El resultado está definido y los detalles de implementación pueden acordarse.|
-| Valiosa |Si |Incorpora especialistas que pueden atender incidencias. |
-| Estimable |Si |El alcance se limita al registro y habilitación. |
-| Pequeña |Si | No incluye la revocación de acceso, que se trata en otra historia.|
-| Verificable |Si | Se comprueban el registro, la validación del correo y la disponibilidad para asignación.|
+| Independiente |Si |Puede implementarse aparte de la asignación de responsable y del cambio de estado. |
+| Negociable |Si | El flujo está definido; los detalles de interfaz pueden acordarse.|
+| Valiosa |Si |Ayuda a ordenar la atención de las incidencias. |
+| Estimable |Si |Falta definir la matriz o regla que relaciona urgencia, impacto y prioridad. |
+| Pequeña |Si |Se limita a registrar los valores y la prioridad.|
+| Verificable |Si | Se prueba que los valores se guardan según la regla definida.|
 
 ---
 
