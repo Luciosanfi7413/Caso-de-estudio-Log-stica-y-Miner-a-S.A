@@ -29,12 +29,6 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 **Formulario (si aplica):** No aplica. Es una pantalla de consulta.
 
 ---
-
-## Consideraciones de accesibilidad
-
-- El estado de cada incidencia se presenta con texto —por ejemplo, “Nuevo”, “En curso” o “Resuelto”— para que la información no dependa únicamente del color. Los encabezados de la tabla identifican qué dato contiene cada columna.
-
----
 ## Pantalla / Módulo 1 — CU-03 — Opciones de soporte
 
 **Wireframe:** [`diagramas/wireframes/CU003-consultar-incidencias-registradas.pdf`](diagramas/wireframes/CU003-consultar-incidencias-registradas.pdf) (pág. 1)
@@ -68,11 +62,6 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 **Justificación:** La vista reúne la información necesaria para comprender la incidencia seleccionada: sus datos principales, estado, responsable, solicitante, descripción e imagen adjunta. También presenta accesos a funciones relacionadas, como gestionar la incidencia o registrar información.
 
 **Formulario (si aplica):** No aplica.
-
-- En las tablas, los encabezados identifican claramente cada columna y los estados se muestran con texto, para que la información no dependa únicamente del color.
----
-
-## Consideraciones de accesibilidad
 
 - En las tablas, los encabezados identifican claramente cada columna y los estados se muestran con texto, para que la información no dependa únicamente del color.
 
@@ -129,11 +118,6 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ---
 
-## Consideraciones de accesibilidad
-
-- En las tablas, los encabezados identifican claramente cada columna y los estados se muestran con texto, para que la información no dependa únicamente del color.
-
----
 ### Pantalla / Módulo 1 — CU-05 — Seleccionar un nuevo estado
 
 **Wireframe:** [diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf (pág. 1)](diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf)
@@ -184,11 +168,6 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 **Formulario (si aplica):** No aplica. Esta pantalla permite consultar los datos de la incidencia.
 
 ---
-## Consideraciones de accesibilidad
-
-- Los estados se muestran con su nombre —Nuevo, En curso, Pendiente o Resuelto— y no se comunican únicamente mediante colores.
-
----
 
 ### Pantalla / Módulo 1 — CU-06 — Seleccionar responsable
 
@@ -225,11 +204,6 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 **Justificación:** Mostrar el nombre del nuevo responsable en el detalle permite comprobar que la asignación quedó asociada a la incidencia correcta.
 
 **Formulario (si aplica):** No aplica. Esta pantalla permite consultar los datos de la incidencia.
-
----
-## Consideraciones de accesibilidad
-
-- El tipo de responsable y el nombre de la persona asignada se identifican mediante texto, sin depender únicamente del color.
 
 ---
 
@@ -322,11 +296,6 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 - Validaciones relevantes: se informa si falta completar la especialidad o si el correo electrónico ya está registrado.
 
 ---
-## Consideraciones de accesibilidad
-
-- Los estados de acceso se muestran con texto —Habilitado o Revocado— y los errores se describen junto al campo correspondiente, sin depender únicamente del color.
-
----
 
 ### Pantalla / Módulo 1 — CU-08 — Consultar incidencias asignadas
 
@@ -347,12 +316,6 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 **Justificación:** El detalle reúne la información necesaria para comprender la incidencia asignada, incluyendo su descripción y archivo adjunto. Las acciones “Gestionar incidencia” y “Registrar información” están disponibles desde el contexto de esa incidencia.
 
 **Formulario (si aplica):** No aplica en esta pantalla. Desde “Registrar información” se inicia el registro del seguimiento.
-
----
-
-## Consideraciones de accesibilidad
-
--En el listado, los encabezados identifican las columnas y los estados se muestran con texto, para que la información no dependa únicamente del color.
 
 ---
 
@@ -448,12 +411,6 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ---
 
-## Consideraciones de accesibilidad
-
-- Los mensajes de confirmación y error explican el resultado mediante texto, y los estados de la incidencia se muestran con su nombre, no únicamente con colores.
-
----
-
 ### Pantalla / Módulo 1 — CU-10 — Acceder a la gestión de incidencias
 
 **Wireframe:** [diagramas/wireframes/CU010-consultar-historial-incidencias.pdf (pág. 1)](diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
@@ -514,12 +471,6 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ---
 
-## Consideraciones de accesibilidad
-
-- En la tabla del historial, los encabezados identifican las columnas y cada registro muestra su fecha, hora, tipo, responsable y detalle mediante texto.
-
----
-
 ### Pantalla / Módulo 1 — CU-11 — Acceder a la gestión de la incidencia
 
 **Wireframe:** [diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf (pág. 1)](diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf)
@@ -565,12 +516,6 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 **Justificación:** Mostrar el nuevo estado en el detalle permite comprobar que el cambio quedó registrado en la incidencia.
 
 **Formulario (si aplica):** No aplica. Esta pantalla permite consultar los datos actualizados.
-
----
-
-## Consideraciones de accesibilidad
-
-- Los estados se identifican mediante texto —En curso, Pendiente y Resuelto— y no se comunican únicamente con colores.
 
 ---
 
@@ -625,4 +570,8 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Consideraciones de accesibilidad
 
-- Los campos Tipo de registro y Descripción tienen etiquetas textuales, y los mensajes de validación identifican qué dato debe completarse.
+- En las tablas, los encabezados identifican claramente cada columna. En el historial, los registros incluyen mediante texto la fecha, hora, tipo, responsable y detalle.
+- Los estados de las incidencias y de acceso se muestran con texto —por ejemplo, “En curso”, “Resuelto”, “Habilitado” o “Revocado”— y las prioridades se identifican como “Baja”, “Media”, “Alta” o “Vital”; la información no depende únicamente del color.
+- El tipo de responsable y el nombre de la persona asignada se identifican mediante texto.
+- Los campos de los formularios tienen etiquetas textuales y los mensajes de validación indican qué dato falta o debe corregirse, junto al campo correspondiente.
+- Los mensajes de confirmación y error explican mediante texto el resultado de la operación.
