@@ -26,13 +26,13 @@ _Elegir TRES historias de usuario del trabajo del primer semestre y pasarlas por
 
 | Ítem (según checklist) | ¿Pasa? | Qué le falta (si no pasa) |
 |-------------------------|--------|-----------------------------|
- 1 | Sí | — |
-| 2 | Sí | — |
-| 3 | Pendiente | No se documenta la validación de la historia por parte de un stakeholder. |
-| 4 | Sí | — |
-| 5 | Sí | — |
-| 6 | Pendiente | Identificar o preparar las cuentas de prueba para verificar credenciales válidas, inválidas y permisos por perfil. |
-| 7 | Pendiente | Incorporar la estimación de esfuerzo y compararla con la capacidad del sprint. |
+| 1 | Sí | Cumple: los criterios permiten probar credenciales válidas e inválidas, además de los permisos por perfil. |
+| 2 | Sí | Cumple: el acceso según el perfil coincide con el alcance de RF-01. |
+| 3 | Sí | La minuta documenta la validación del requisito RF-01 por parte de un stakeholder. |
+| 4 | Sí | Cumple: permite que cada usuario acceda a las funciones correspondientes a su perfil. |
+| 5 | Sí | Cumple: puede desarrollarse como una capacidad delimitada de acceso al sistema. |
+| 6 | No | Preparar cuentas de prueba para cada perfil y para el caso de credenciales inválidas. |
+| 7 | No | Registrar la estimación de esfuerzo y compararla con la capacidad disponible del sprint. |
 
 ---
 
@@ -40,13 +40,13 @@ _Elegir TRES historias de usuario del trabajo del primer semestre y pasarlas por
 
 | Ítem (según checklist) | ¿Pasa? | Qué le falta (si no pasa) |
 |-------------------------|--------|-----------------------------|
-| 1 | No | Precisar los formatos y tamaños permitidos para los archivos adjuntos, para que QA pueda probarlos objetivamente. |
-| 2 | Sí | La historia es consistente con RF-04 y RF-06, que contemplan el registro y los adjuntos. |
-| 3 | Pendiente | No se documenta la validación de la funcionalidad por parte de un stakeholder. |
-| 4 | Sí | — |
-| 5 | Pendiente | Identificar cómo se obtiene y mantiene el registro de elementos afectados que se validan durante el alta. |
-| 6 | No | Preparar datos de prueba para elementos registrados y no registrados, incidencias abiertas y archivos válidos e inválidos. |
-| 7 | No | Revisar el tamaño de la historia: reúne varias validaciones y el manejo de adjuntos; falta estimar si entra en un sprint. |
+| 1 | No | Especificar los formatos y tamaños permitidos para imágenes y documentos adjuntos, para que QA pueda comprobarlos. |
+| 2 | Sí | Cumple: RF-04 y RF-06 contemplan el registro de incidencias y el uso de adjuntos. |
+| 3 | Sí | La minuta documenta la validación de los requisitos RF-04 y RF-06 por parte de un stakeholder. |
+| 4 | Sí | Cumple: permite al Solicitante reportar fallas o solicitudes técnicas para su gestión. |
+| 5 | No | Identificar el origen del registro de elementos afectados que el sistema consulta y cómo se mantiene actualizado. |
+| 6 | No | Preparar datos de prueba para elementos registrados y no registrados, incidencias abiertas y archivos permitidos y rechazados. |
+| 7 | No | Estimar el flujo completo, incluidas sus validaciones y adjuntos, y comprobar si entra en la capacidad del sprint. |
 
 ---
 
@@ -54,10 +54,10 @@ _Elegir TRES historias de usuario del trabajo del primer semestre y pasarlas por
 
 | Ítem (según checklist) | ¿Pasa? | Qué le falta (si no pasa) |
 |-------------------------|--------|-----------------------------|
-| 1 | No | Definir los niveles de urgencia e impacto y los criterios concretos para asignar una prioridad. |
-| 2 | No | Contrastar la regla de prioridad con las reglas de negocio vigentes; todavía no está especificada la relación entre urgencia, impacto y prioridad. |
-| 3 | Pendiente | Validar la regla de prioridad con el stakeholder responsable de definirla. |
-| 4 | Sí | Ayuda a ordenar la atención de las incidencias. |
-| 5 | Sí | Puede desarrollarse como una funcionalidad delimitada; presupone que ya existen incidencias para priorizar. |
-| 6 | No | Preparar casos de prueba que cubran las combinaciones de urgencia e impacto y la prioridad esperada para cada una. |
-| 7 | No | Completar la regla de prioridad y estimar el esfuerzo antes de confirmar que la historia entra en el sprint. |
+| 1 | No | Indicar los niveles de urgencia e impacto y la prioridad que corresponde a cada combinación. |
+| 2 | No | Definir la relación entre urgencia, impacto y prioridad para poder contrastarla con las reglas de negocio vigentes. |
+| 3 | Sí | La minuta documenta la validación del requisito RF-11 por parte de un stakeholder. |
+| 4 | Sí | Cumple: asignar prioridades ayuda a ordenar la atención de las incidencias. |
+| 5 | Sí | Cumple: la asignación de prioridad es una capacidad delimitada y puede tratarse sobre incidencias ya registradas. |
+| 6 | No | Preparar casos de prueba con combinaciones de urgencia e impacto y sus prioridades esperadas. |
+| 7 | No | Estimar la historia una vez definida la regla de prioridad y compararla con la capacidad disponible del sprint. |
