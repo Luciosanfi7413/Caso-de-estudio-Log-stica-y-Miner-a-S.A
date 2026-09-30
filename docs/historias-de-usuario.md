@@ -232,31 +232,32 @@ Verificable	Sí	Se prueban el registro, las validaciones, el identificador y el 
 
 ---
 
-## HU-09 — [Registrar y habilitar un especialista externo]
+## HU-09 — [Consultar el historial de una incidencia]
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Responsable de Sistemas, quiero registrar y habilitar a un Especialista Externo, para que pueda ser asignado a la gestión de incidencias. |
-| Módulo |Módulo 1 — Acceso y gestión de usuarios |
-| Requisitos relacionados |RF-02|
+| Historia | Como Responsable de Sistemas, quiero consultar el historial de una incidencia, para revisar las acciones y cambios realizados durante su gestión. |
+| Módulo |Módulo 3 — Consulta y seguimiento de incidencias|
+| Requisitos relacionados |RF-10, RNF-04|
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir registrar los datos requeridos del Especialista Externo.
-2. El sistema deberá validar que el correo electrónico no esté asociado a otro especialista registrado.
-3. Al confirmar el registro, el sistema deberá dejar al especialista habilitado y disponible para nuevas asignaciones.
-4. El sistema deberá permitir que haya varios Especialistas Externos habilitados simultáneamente.
+1. El sistema deberá mostrar los registros del historial en orden cronológico.
+2. Cada registro deberá informar fecha, hora, tipo, actor responsable y detalle de la información registrada.
+3. Al seleccionar un registro, el sistema deberá mostrar su detalle completo.
+4. El sistema deberá conservar el historial completo durante dos años desde el cierre de la incidencia.
+5. La consulta del historial no deberá modificar los registros existentes.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Puede implementarse aparte del flujo de atención de una incidencia. |
-| Negociable |Si | El resultado está definido y los detalles de implementación pueden acordarse.|
-| Valiosa |Si |Incorpora especialistas que pueden atender incidencias. |
-| Estimable |Si |El alcance se limita al registro y habilitación. |
-| Pequeña |Si | No incluye la revocación de acceso, que se trata en otra historia.|
-| Verificable |Si | Se comprueban el registro, la validación del correo y la disponibilidad para asignación.|
+| Independiente |Si |Es una capacidad de consulta diferenciada del registro de intervenciones. |
+| Negociable |Si | El contenido mínimo está definido; la presentación puede acordarse.|
+| Valiosa |Si |Aporta antecedentes para analizar incidencias similares.|
+| Estimable |Si |Se delimitan la consulta, el orden y el detalle de registros. |
+| Pequeña |Si | La conservación por dos años puede involucrar decisiones técnicas adicionales.|
+| Verificable |Si | Se comprueba el orden, los datos visibles, el detalle y la retención indicada.|
 
 ---
 
