@@ -1,31 +1,92 @@
 @startuml
-title Modelo Entidad-Relación - [Nombre del Sistema]
 
-' --- Entidades ---
-entity Entidad1 {
-  * id_entidad1 : integer <<PK>>
-  --
-  atributo1 : varchar
-  atributo2 : varchar
+title Modelo Entidad-Relación - [Log-stica-y-Miner]
+' Configuración visual del diagrama
+hide circle
+skinparam linetype ortho
+skinparam EntityBackgroundColor #F9F9F9
+
+' --- Entidades y Atributos ---
+
+entity "PERSONA" {
+  * id_persona : PK
 }
 
-entity Entidad2 {
-  * id_entidad2 : integer <<PK>>
-  --
-  atributo1 : varchar
-  id_entidad1 : integer <<FK>>
+entity "EMPLEADO" {
+  * id_persona : PK, FK
 }
 
-entity Entidad3 {
-  * id_entidad3 : integer <<PK>>
+entity "ESPECIALISTA_EXTERNO" {
+  * id_persona : PK, FK
   --
-  atributo1 : varchar
-  id_entidad1 : integer <<FK>>
+  id_especialidad : FK
+}
+
+entity "ROL" {
+  * id_rol : PK
+}
+
+entity "EMPLEADO_ROL" {
+  * id_persona : PK, FK
+  * id_rol : PK, FK
+}
+
+entity "ESPECIALIDAD" {
+  * id_especialidad : PK
+}
+
+entity "INCIDENCIA" {
+  * id_incidencia : PK
+  --
+  id_empleado_solicitante : FK
+  elemento_identificador : FK
+}
+
+entity "ELEMENTO" {
+  * identificador_elemento : PK
+}
+
+entity "ADJUNTO" {
+  --
+  id_incidencia : FK
+}
+
+entity "HISTORIAL" {
+  --
+  id_incidencia : FK
+  id_persona : FK
+}
+
+entity "ASIGNACION" {
+  --
+  id_incidencia : FK
+  id_persona_asignada : FK
 }
 
 ' --- Relaciones ---
-' Sintaxis: EntidadA [cardinalidad] -- [cardinalidad] EntidadB : "etiqueta"
-Entidad1 ||--o{ Entidad2 : "relación"
-Entidad1 ||--o{ Entidad3 : "relación"
+
+' Herencia de Persona (1 a 1)
+PERSONA ||--|| EMPLEADO 
+PERSONA ||--|| ESPECIALISTA_EXTERNO 
+
+' Relación de Especialista con Especialidad
+ESPECIALIDAD ||--o{ ESPECIALISTA_EXTERNO}
+
+' Relación de muchos a muchos resuelta con tabla intermedia (Empleado - Rol)
+EMPLEADO ||--o{ EMPLEADO_ROL}
+ROL ||--o{ EMPLEADO_ROL}
+
+' Relaciones principales de la Incidencia
+EMPLEADO ||--o{ INCIDENCIA} 
+ELEMENTO ||--o{ INCIDENCIA}
+
+' Tablas dependientes de la Incidencia (transfieren el ID como FK)
+INCIDENCIA ||--o{ ADJUNTO}
+INCIDENCIA ||--o{ HISTORIAL}
+INCIDENCIA ||--o{ ASIGNACION}
+
+' Conexiones de Historial y Asignación con las personas involucradas
+PERSONA ||--o{ HISTORIAL}
+PERSONA ||--o{ ASIGNACION}
 
 @enduml
