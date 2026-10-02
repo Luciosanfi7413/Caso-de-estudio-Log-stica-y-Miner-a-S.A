@@ -104,6 +104,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 3. El sistema deberá validar los campos obligatorios y que el elemento afectado esté registrado y no tenga otra incidencia abierta.
 4. Al confirmar un registro válido, el sistema deberá asociar la incidencia al Solicitante, asignarle un identificador único y establecer su estado inicial como Nuevo.
 5. Si un dato obligatorio o un archivo no cumple las condiciones definidas, el sistema deberá explicar el error y conservar los demás datos ingresados.
+6. Se deberá adjuntar archivos solo en formato PNG, PGJ y JPEG.
 
 ### Validación INVEST
 

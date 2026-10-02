@@ -40,7 +40,7 @@ _Elegir TRES historias de usuario del trabajo del primer semestre y pasarlas por
 
 | Ítem (según checklist) | ¿Pasa? | Qué le falta (si no pasa) |
 |-------------------------|--------|-----------------------------|
-| 1 | No | Especificar los formatos y tamaños permitidos para imágenes y documentos adjuntos, para que QA pueda comprobarlos. |
+| 1 | si | Los criterios esepcifican todo lo necesario para desarrollar y probar la funcionalidad. |
 | 2 | Sí | Cumple: RF-04 y RF-06 contemplan el registro de incidencias y el uso de adjuntos. |
 | 3 | Sí | La minuta documenta la validación de los requisitos RF-04 y RF-06 por parte de un stakeholder. |
 | 4 | Sí | Cumple: permite al Solicitante reportar fallas o solicitudes técnicas para su gestión. |
