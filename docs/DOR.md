@@ -31,8 +31,8 @@ _Elegir TRES historias de usuario del trabajo del primer semestre y pasarlas por
 | 3 | Sí | La minuta documenta la validación del requisito RF-01 por parte de un stakeholder. |
 | 4 | Sí | Cumple: permite que cada usuario acceda a las funciones correspondientes a su perfil. |
 | 5 | Sí | Cumple: puede desarrollarse como una capacidad delimitada de acceso al sistema. |
-| 6 | No | Preparar cuentas de prueba para cada perfil y para el caso de credenciales inválidas. |
-| 7 | No | Registrar la estimación de esfuerzo y compararla con la capacidad disponible del sprint. |
+| 6 | Sí | Si tenemos armados los datos de prueba necesarios. |
+| 7 | Sí | Si, está contempleado el tiempo de desarrollo y la capacidad del equipo. |
 
 ---
 
@@ -40,13 +40,13 @@ _Elegir TRES historias de usuario del trabajo del primer semestre y pasarlas por
 
 | Ítem (según checklist) | ¿Pasa? | Qué le falta (si no pasa) |
 |-------------------------|--------|-----------------------------|
-| 1 | No | Especificar los formatos y tamaños permitidos para imágenes y documentos adjuntos, para que QA pueda comprobarlos. |
+| 1 | si | Los criterios esepcifican todo lo necesario para desarrollar y probar la funcionalidad. |
 | 2 | Sí | Cumple: RF-04 y RF-06 contemplan el registro de incidencias y el uso de adjuntos. |
 | 3 | Sí | La minuta documenta la validación de los requisitos RF-04 y RF-06 por parte de un stakeholder. |
 | 4 | Sí | Cumple: permite al Solicitante reportar fallas o solicitudes técnicas para su gestión. |
-| 5 | No | Identificar el origen del registro de elementos afectados que el sistema consulta y cómo se mantiene actualizado. |
-| 6 | No | Preparar datos de prueba para elementos registrados y no registrados, incidencias abiertas y archivos permitidos y rechazados. |
-| 7 | No | Estimar el flujo completo, incluidas sus validaciones y adjuntos, y comprobar si entra en la capacidad del sprint. |
+| 5 | Sí | Si cumple. La historia tiene independencia al menos con historias del mismo sprint. |
+| 6 | Sí | Si tenemos armados los datos de prueba necesarios. |
+| 7 | Sí | Se estimó el flujo completo, incluidas sus validaciones y adjuntos, y se comprobó que entra en la capacidad del sprint. |
 
 ---
 
@@ -54,10 +54,10 @@ _Elegir TRES historias de usuario del trabajo del primer semestre y pasarlas por
 
 | Ítem (según checklist) | ¿Pasa? | Qué le falta (si no pasa) |
 |-------------------------|--------|-----------------------------|
-| 1 | No | Indicar los niveles de urgencia e impacto y la prioridad que corresponde a cada combinación. |
-| 2 | No | Definir la relación entre urgencia, impacto y prioridad para poder contrastarla con las reglas de negocio vigentes. |
+| 1 | Sí | Brindan el detalle necesario según los casos de uso.
+| 2 | Sí | Si cumple, las reglas de negocio son claras. |
 | 3 | Sí | La minuta documenta la validación del requisito RF-11 por parte de un stakeholder. |
 | 4 | Sí | Cumple: asignar prioridades ayuda a ordenar la atención de las incidencias. |
 | 5 | Sí | Cumple: la asignación de prioridad es una capacidad delimitada y puede tratarse sobre incidencias ya registradas. |
-| 6 | No | Preparar casos de prueba con combinaciones de urgencia e impacto y sus prioridades esperadas. |
-| 7 | No | Estimar la historia una vez definida la regla de prioridad y compararla con la capacidad disponible del sprint. |
+| 6 | Sí | Si tenemos armados los datos de prueba necesarios.|
+| 7 | Sí  | Se estimó el flujo completo y se comprobó que entra en la capacidad del sprint. |
