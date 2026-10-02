@@ -2,48 +2,112 @@
 
 ## Diagrama
 
-_Incluir el código PlantUML en `diagramas/er.puml`._
-_Visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/)._
+@startuml
+' Configuración visual del diagrama
+hide circle
+skinparam linetype ortho
+skinparam EntityBackgroundColor #F9F9F9
+
+' --- Entidades y Atributos ---
+
+entity "PERSONA" {
+  * id_persona : PK
+}
+
+entity "EMPLEADO" {
+  * id_persona : PK, FK
+}
+
+entity "ESPECIALISTA_EXTERNO" {
+  * id_persona : PK, FK
+  --
+  id_especialidad : FK
+}
+
+entity "ROL" {
+  * id_rol : PK
+}
+
+entity "EMPLEADO_ROL" {
+  * id_persona : PK, FK
+  * id_rol : PK, FK
+}
+
+entity "ESPECIALIDAD" {
+  * id_especialidad : PK
+}
+
+entity "INCIDENCIA" {
+  * id_incidencia : PK
+  --
+  id_empleado_solicitante : FK
+  elemento_identificador : FK
+}
+
+entity "ELEMENTO" {
+  * identificador_elemento : PK
+}
+
+entity "ADJUNTO" {
+  --
+  id_incidencia : FK
+}
+
+entity "HISTORIAL" {
+  --
+  id_incidencia : FK
+  id_persona : FK
+}
+
+entity "ASIGNACION" {
+  --
+  id_incidencia : FK
+  id_persona_asignada : FK
+}
+
+' --- Relaciones ---
+
+' Herencia de Persona (1 a 1)
+PERSONA ||--|| EMPLEADO 
+PERSONA ||--|| ESPECIALISTA_EXTERNO 
+
+' Relación de Especialista con Especialidad
+ESPECIALIDAD ||--o{ ESPECIALISTA_EXTERNO}
+
+' Relación de muchos a muchos resuelta con tabla intermedia (Empleado - Rol)
+EMPLEADO ||--o{ EMPLEADO_ROL}
+ROL ||--o{ EMPLEADO_ROL}
+
+' Relaciones principales de la Incidencia
+EMPLEADO ||--o{ INCIDENCIA} 
+ELEMENTO ||--o{ INCIDENCIA}
+
+' Tablas dependientes de la Incidencia (transfieren el ID como FK)
+INCIDENCIA ||--o{ ADJUNTO}
+INCIDENCIA ||--o{ HISTORIAL}
+INCIDENCIA ||--o{ ASIGNACION}
+
+' Conexiones de Historial y Asignación con las personas involucradas
+PERSONA ||--o{ HISTORIAL}
+PERSONA ||--o{ ASIGNACION}
+
+@enduml
 
 ## Entidades
 
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|                    Entidad                 |                                Descripción                      |                                              Relaciones clave                                        |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|                **PERSONA**                 | Tabla principal que almacena los datos básicos.                 | Es la tabla "padre". Su PK es utilizada como clave foránea (FK).                                     |
-|                                            | Su clave primaria (PK) es `id_persona.                          | en `EMPLEADO` y `ESPECIALISTA_EXTERNO                                                                |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|               **EMPLEADO**                 | Tabla que representa al empleado,                               | Su `id_persona` actúa como PK y FK al mismo tiempo.                                                  |
-|                                            | heredando de `PERSONA                                           | Se relaciona con `ROL` mediante la tabla intermedia `EMPLEADO_ROL`                                   |
-|                                            |                                                                 | y con `INCIDENCIA` como solicitante.                                                                 |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|         **ESPECIALISTA_EXTERNO**           | Tabla que representa al técnico externo,                        | Su `id_persona` es PK y FK. Posee una clave foránea                                                  |
-|                                            | heredando de `PERSONA`.                                         |(`id_especialidad`) que lo conecta directamente con `ESPECIALIDAD`.                                   |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|                **ROL**                     | Catálogo de roles del sistema. Su PK es `id_rol`.               | Se vincula a los empleados a través de la tabla `EMPLEADO_ROL`.                                      |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|            **EMPLEADO_ROL**                | Tabla intermedia para resolver la relación de                   | Su clave primaria compuesta está formada                                                             |
-|                                            | muchos a muchos entre empleados y roles.                        | por dos claves foráneas: `id_persona` e `id_rol`.                                                    |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|             **ESPECIALIDAD**               | Catálogo de especialidades.                                     | Es referenciada mediante una clave foránea (FK)                                                      |
-|                                            | Su PK es `id_especialidad`.                                     | desde la tabla `ESPECIALISTA_EXTERNO`.                                                               |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|               **INCIDENCIA**               | Tabla central del sistema.                                      | Posee claves foráneas hacia `EMPLEADO` (`id_empleado_solicitante`)                                   |
-|                                            | Su PK es `id_incidencia`.                                       | y `ELEMENTO` (`elemento_identificador`). Su ID se transfiere como                                    |
-|                                            |                                                                 | FK a `ASIGNACION`, `ADJUNTO` e `HISTORIAL`.                                                          |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|               **ELEMENTO**                 | Catálogo de elementos que pueden fallar.                        | Es referenciada directamente por la tabla `INCIDENCIA` mediante una FK.                              |
-|                                            | Su PK es identificador_elemento`.                               |                                                                                                      |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|                 **ADJUNTO**                | Almacena los archivos del reporte.                              | Se vincula a una incidencia específica mediante                                                      |
-|                                            |                                                                 | la clave foránea `id_incidencia`.                                                                    |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|               **HISTORIAL**                | Tabla de registro de eventos.                                   | Se vincula a una incidencia mediante `id_incidencia` (FK)                                            |
-|                                            |                                                                 | y a la persona involucrada mediante `id_persona` (FK).                                               |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-|             **ASIGNACION**                 | Tabla que registra la derivación del problema.                  | Contiene claves foráneas que la vinculan a la incidencia (`id_incidencia`)                           |
-|                                            |                                                                 | y a la persona encargada (`id_persona_asignada`).                                                    |
-|--------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| Entidad                  | Descripción                                                                                               | Relaciones clave                                                                                                                                                                                           |
+|--------------------------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **PERSONA**              | Tabla principal que almacena los datos básicos. Su clave primaria (PK) es `id_persona`.          | Es la tabla "padre". Su PK es utilizada como clave foránea (FK) en `EMPLEADO` y `ESPECIALISTA_EXTERNO`.                                                                                           |
+| **EMPLEADO**             | Tabla que representa al empleado, heredando de `PERSONA`.                                        | Su `id_persona` actúa como PK y FK al mismo tiempo. Se relaciona con `ROL` mediante la tabla intermedia `EMPLEADO_ROL` y con `INCIDENCIA` como solicitante.                              |
+| **ESPECIALISTA_EXTERNO** | Tabla que representa al técnico externo, heredando de `PERSONA`.                                 | Su `id_persona` es PK y FK[cite: 3]. Posee una clave foránea (`id_especialidad`) que lo conecta directamente con `ESPECIALIDAD`.                                                                  |
+| **ROL**                  | Catálogo de roles del sistema. Su PK es `id_rol`.                                                | Se vincula a los empleados a través de la tabla `EMPLEADO_ROL`.                                                                                                                                   |
+| **EMPLEADO_ROL**         | Tabla intermedia para resolver la relación de muchos a muchos entre empleados y roles.           | Su clave primaria compuesta está formada por dos claves foráneas: `id_persona` e `id_rol`.                                                                                                        |
+| **ESPECIALIDAD**         | Catálogo de especialidades. Su PK es `id_especialidad`.                                          | Es referenciada mediante una clave foránea (FK) desde la tabla `ESPECIALISTA_EXTERNO`.                                                                                                            |
+| **INCIDENCIA**           | Tabla central del sistema. Su PK es `id_incidencia`.                                             | Posee claves foráneas hacia `EMPLEADO` (`id_empleado_solicitante`) y `ELEMENTO` (`elemento_identificador`). Su ID se transfiere como FK a `ASIGNACION`, `ADJUNTO` e `HISTORIAL`.           |
+| **ELEMENTO**             | Catálogo de elementos que pueden fallar. Su PK es `identificador_elemento`.                      | Es referenciada directamente por la tabla `INCIDENCIA` mediante una FK.                                                                                                                           |
+| **ADJUNTO**              | Almacena los archivos del reporte.                                                               | Se vincula a una incidencia específica mediante la clave foránea `id_incidencia`.                                                                                                                 |
+| **HISTORIAL**            | Tabla de registro de eventos.                                                                    | Se vincula a una incidencia mediante `id_incidencia` (FK) y a la persona involucrada mediante `id_persona` (FK).                                                                                  |
+| **ASIGNACION**           | Tabla que registra la derivación del problema (en el diagrama original dice ASGINACION).         | Contiene claves foráneas que la vinculan a la incidencia (`id_incidencia`) y a la persona encargada (`id_persona_asignada`).                                                                      |
 
 
 ## Descripción de atributos principales
@@ -115,9 +179,7 @@ _Visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/)._
 
 ## Decisiones de diseño
 
-_Justificar al menos dos decisiones de diseño relevantes: por qué se modeló de esa manera,
-qué alternativas se consideraron y por qué se descartaron._
-
-### Decisión 1 — [Título]
-
-### Decisión 2 — [Título]
+### Decisión 1 — [Transformación de "Especialidad" en entidad independiente]
+Inicialmente, se consideró modelar la especialidad simplemente como un atributo dentro de la entidad ESPECIALISTA_EXTERNO. Esta alternativa se descartó porque limitaba a cada especialista externo a poseer una sola especialidad. En su lugar, se decidió que ESPECIALIDAD sea una entidad en sí misma, estableciendo una relación de muchos a muchos (N a N) con ESPECIALISTA_EXTERNO. Esta decisión de diseño permite que un mismo especialista pueda tener más de una especialidad asociada en el sistema.
+### Decisión 2 — [Eliminación de atributos redundantes en "Incidencia"Título]
+En una primera versión del diagrama, se habían incluido los atributos de fecha de resolución y descripción de resolución directamente en la entidad INCIDENCIA. Se descartó mantenerlos allí al detectar que se estaban duplicando datos que ya estaban presentes en la entidad HISTORIAL. Por lo tanto, se tomó la decisión de sacar esos atributos de INCIDENCIA y dejarlos exclusivamente en HISTORIAL, evitando así la redundancia de información en la base de datos.
