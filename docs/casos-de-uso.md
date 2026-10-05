@@ -428,3 +428,40 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Frecuencia | Cada vez que el Especialista Externo necesite registrar una acción realizada durante la gestión de una incidencia asignada. |
 | Importancia | Importante |
 | Urgencia | Vital |
+
+---
+
+## CU-13 — Informar imposibilidad de atender una incidencia asignada
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-13 |
+| Nombre | Informar imposibilidad de atender una incidencia asignada |
+| Descripción | Permite al Especialista Externo informar que no podrá hacerse cargo de una incidencia que tiene asignada, para que el Responsable de Sistemas evalúe su reasignación. |
+| Actores | Principal: Especialista Externo / Secundario: Responsable de Sistemas |
+| Precondiciones | El Especialista Externo debe encontrarse habilitado y tener asignada una incidencia que no esté cerrada. |
+| Postcondiciones | Éxito: el sistema registra el aviso, conserva el estado actual de la incidencia y la deja disponible para que el Responsable de Sistemas la reasigne. / Fallo: el aviso no se registra y el sistema informa el motivo. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | El Especialista Externo accede al listado de incidencias asignadas. | El sistema muestra las incidencias asignadas al Especialista Externo. |
+| 2 | El Especialista Externo selecciona la incidencia que no podrá atender. | El sistema muestra el detalle y la opción “Informar que no podré hacerme cargo”. |
+| 3 | El Especialista Externo selecciona esa opción. | El sistema solicita confirmar el envío del aviso. |
+| 4 | El Especialista Externo confirma el envío. | El sistema registra el aviso asociado a la incidencia y al Especialista Externo, informa al Responsable de Sistemas y deja la incidencia disponible para su reasignación. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | El Especialista Externo intenta informar que no podrá atender una incidencia que ya no tiene asignada. | El sistema informa que la incidencia ya no está asignada al Especialista Externo y no registra el aviso. |
+| E2 | El Especialista Externo intenta informar que no podrá atender una incidencia que ya está cerrada. | El sistema informa que la incidencia está cerrada y no permite registrar el aviso. |
+| E3 | El Especialista Externo vuelve a enviar un aviso que ya había registrado para la misma incidencia. | El sistema informa que el aviso ya fue registrado y evita duplicarlo. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento | El sistema deberá registrar el aviso y dejarlo disponible para el Responsable de Sistemas en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
+| Frecuencia | Cada vez que un Especialista Externo necesite informar que no podrá hacerse cargo de una incidencia asignada. |
+| Importancia | Importante |
+| Urgencia | Inmediata |
