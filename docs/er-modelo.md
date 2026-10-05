@@ -2,7 +2,8 @@
 
 ## Diagrama
 
-C:\Users\elchi\OneDrive\Documentos\GitHub\Caso-de-estudio-Log-stica-y-Miner-a-S.A\diagramas\ER-Model.png
+![Diagrama general de casos de uso](../diagramas/ER-Model.png)
+[Ver código PlantUML](../diagramas/er.puml)
 
 ## Entidades
 
