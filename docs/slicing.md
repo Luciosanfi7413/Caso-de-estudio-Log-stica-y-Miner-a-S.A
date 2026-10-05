@@ -13,8 +13,8 @@
 
 1. Reportar una incidencia.
 2. Lista de incidencias reportadas por parte del solicitante.
-3. Asignación de un ticket a un responsable.
-4. Derivación del ticket a otro responsable.
+3. Asignar o reasignar una incidencia a un responsable.
+4.  Informar que no se podrá atender una incidencia asignada a un Especialista Externo.
 5. Lista de incidencias asignadas a uno mismo.
 6. Cambiar estado de ticket a "en curso".
 7. Cambiar estado de ticket a "cerrada".
@@ -30,12 +30,11 @@
 ### Criterios de aceptación
 
 1. El sistema deberá permitir informar el tipo de incidencia, el elemento afectado, su identificador y la descripción del problema.
-2. El sistema deberá permitir adjuntar imágenes o documentos como información complementaria.
+2. El sistema deberá permitir adjuntar una o más imágenes relacionadas con la incidencia.
 3. El sistema deberá validar los campos obligatorios y que el elemento afectado esté registrado y no tenga otra incidencia abierta.
 4. Al confirmar un registro válido, el sistema deberá asociar la incidencia al Solicitante, asignarle un identificador único y establecer su estado inicial como Nuevo.
 5. Si un dato obligatorio o un archivo no cumple las condiciones definidas, el sistema deberá explicar el error y conservar los demás datos ingresados.
-6. Se deberá adjuntar archivos solo en formato PNG, PGJ y JPEG.
-
+6. El sistema deberá aceptar imágenes en formato PNG o JPEG.
 ---
 
 ## HU-06 — [Consultar las incidencias propias]
@@ -66,9 +65,9 @@ para cada una, indiquen qué debería hacer el sistema y quién tendría que dec
 |----------|---------------------|--------------------------------------------|
 | ¿Qué pasa si el Solicitante intenta registrar la incidencia sin completar uno o más campos obligatorios? | Informa cuáles son los campos obligatorios que falta completar, los destaca en la pantalla e impide el registro de la incidencia manteniendo la información tipeada. | Analista |
 | ¿Qué pasa si el Solicitante ingresa un identificador que no corresponde a un elemento registrado? | Notifica que el identificador ingresado no existe en el catálogo, impide continuar con el registro y solicita corregir el código o número de serie para proceder. | Negocio |
-| ¿Qué pasa si el Solicitante ingresa el identificador de un elemento que ya posee una incidencia abierta? | Informa que el elemento ya tiene una incidencia abierta, muestra el identificador y estado de dicha incidencia, e impide registrar un nuevo ticket mientras la anterior siga en curso. | Negocio |
+| ¿Qué pasa si el Solicitante ingresa el identificador de un elemento que ya posee una incidencia abierta? | El sistema impide registrar otra incidencia para el mismo elemento mientras la incidencia anterior no se encuentre en estado “Cerrado”. | Negocio |
 | ¿Qué pasa si el Solicitante intenta adjuntar una imagen que no cumple las condiciones establecidas de formato o tamaño? | Rechaza el archivo subido, muestra un mensaje indicando el motivo del rechazo y conserva intactos todos los demás datos ingresados. | Técnica / Analista |
-| ¿Qué pasa si ocurre una desconexión de red o error de servidor al momento de presionar "Confirmar"? | Detecta el fallo de comunicación, no genera el ticket ni asigna el identificador único (aplica rollback) y notifica al usuario el error de red manteniendo la información en el formulario para reintentar. | Técnica |
+| ¿Qué pasa si ocurre una desconexión de red o error de servidor al momento de presionar "Confirmar"? | El sistema informa que no pudo confirmar el resultado. Al reintentar, verifica si la incidencia ya fue registrada y evita crear un duplicado. Si ya se registró, informa su identificador; si no, permite reintentar conservando los datos ingresados. | Técnica |
 
 ---
 

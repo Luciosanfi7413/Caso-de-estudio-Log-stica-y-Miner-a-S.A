@@ -89,63 +89,65 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-04 — [Registrar una incidencia desde el formulario web]
+## HU-04 — Registrar una incidencia desde el formulario web
 
 | Campo | Detalle |
 |-------|---------|
+| Identificador | HU-04 |
 | Historia | Como Solicitante, quiero registrar una falla o solicitud técnica con los datos del elemento afectado, para que el área de Sistemas pueda gestionarla. |
-| Módulo |Módulo 2 — Registro de incidencias |
-| Requisitos relacionados |RF-04, RF-06|
+| Módulo | Módulo 2 — Registro de incidencias |
+| Requisitos relacionados | RF-04, RF-06 |
 
 ### Criterios de aceptación
 
 1. El sistema deberá permitir informar el tipo de incidencia, el elemento afectado, su identificador y la descripción del problema.
-2. El sistema deberá permitir adjuntar imágenes o documentos como información complementaria.
-3. El sistema deberá validar los campos obligatorios y que el elemento afectado esté registrado y no tenga otra incidencia abierta.
-4. Al confirmar un registro válido, el sistema deberá asociar la incidencia al Solicitante, asignarle un identificador único y establecer su estado inicial como Nuevo.
-5. Si un dato obligatorio o un archivo no cumple las condiciones definidas, el sistema deberá explicar el error y conservar los demás datos ingresados.
-6. Se deberá adjuntar archivos solo en formato PNG, PGJ y JPEG.
+2. El sistema deberá permitir adjuntar una o más imágenes relacionadas con la incidencia.
+3. El sistema deberá validar que los campos obligatorios estén completos, que el elemento afectado esté registrado y que no tenga otra incidencia cuyo estado sea distinto de “Cerrado”. Si alguna validación falla, deberá impedir el registro e informar el motivo.
+4. Al confirmar un registro válido, el sistema deberá asociar la incidencia al Solicitante, asignarle un identificador único y establecer su estado inicial como “Nuevo”.
+5. Si faltan datos obligatorios o una imagen no cumple las condiciones permitidas, el sistema deberá informar el error y conservar los demás datos ingresados.
+6. El sistema deberá aceptar imágenes en formato PNG o JPEG que no superen los 15 MB por archivo.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |El registro se puede entregar como flujo funcional propio.|
-| Negociable |Si | Los campos y reglas están identificados; el diseño puede acordarse.|
-| Valiosa |Si |Permite formalizar y dar seguimiento a los pedidos de soporte.|
-| Estimable |Si |El formulario y sus validaciones tienen un alcance delimitado.
-Pequeña	Parcial	El flujo incluye varias validaciones y adjuntos; revisar si el equipo lo estima grande.
-Verificable	Sí	Se prueban el registro, las validaciones, el identificador y el estado inicial.|
-| Pequeña |Si | No incluye la revocación de acceso, que se trata en otra historia.|
-| Verificable |Si | Se prueban el registro, las validaciones, el identificador y el estado inicial.|
+| Independiente | Sí | El registro se puede desarrollar y probar como un flujo funcional propio. |
+| Negociable | Sí | El objetivo y las reglas principales están definidos; los detalles de interacción pueden acordarse. |
+| Valiosa | Sí | Permite que el Solicitante registre problemas para que Sistemas los gestione. |
+| Estimable | Sí | Están definidos los datos, las validaciones, los formatos y el límite de tamaño de las imágenes. |
+| Pequeña | Parcial | El alcance reúne el formulario, varias validaciones y la carga de imágenes; el equipo deberá considerar esa complejidad al estimarlo. |
+| Verificable | Sí | Se pueden probar los campos, las validaciones, el registro, los formatos admitidos y el límite de 15 MB por imagen. |
 
 ---
 
-## HU-05 — [Registrar una incidencia desde un dispositivo móvil]
+## HU-05 — Registrar una incidencia desde un dispositivo móvil
 
 | Campo | Detalle |
 |-------|---------|
-| Historia |Como Chofer, quiero registrar una incidencia desde mi dispositivo móvil durante un recorrido, para informar un problema sin tener que volver a las instalaciones.|
-| Módulo |Módulo 2 — Registro de incidencias|
-| Requisitos relacionados |RF-05, RF-06, RNF-07|
+| Identificador | HU-05 |
+| Historia | Como Solicitante que se encuentra realizando un recorrido, quiero registrar una incidencia desde mi dispositivo móvil, para informar el problema sin tener que volver a las instalaciones. |
+| Módulo | Módulo 2 — Registro de incidencias |
+| Requisitos relacionados | RF-05, RF-06, RNF-07 |
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir al Chofer indicar el elemento afectado, sus datos identificatorios y una descripción de la situación.
-2. El sistema deberá permitir adjuntar una fotografía u otro documento permitido como información complementaria.
-3. En una pantalla de 360 px de ancho o superior, el Chofer deberá poder completar el registro y acceder a las acciones necesarias sin desplazamiento horizontal.
-4. Al confirmar un registro válido, el sistema deberá conservar la incidencia y asociarla al Chofer que la registró.
+1. El sistema deberá permitir al Solicitante acceder al formulario de registro desde un dispositivo móvil.
+2. El formulario deberá permitir informar el tipo de incidencia, el elemento afectado, su identificador y la descripción del problema.
+3. El sistema deberá permitir adjuntar, opcionalmente, una o más imágenes en formato PNG o JPEG, de hasta 15 MB por archivo.
+4. En una pantalla de 360 px de ancho o superior, el Solicitante deberá poder completar el registro y utilizar sus acciones sin desplazamiento horizontal.
+5. Al confirmar un registro válido, el sistema deberá asociar la incidencia al Solicitante, asignarle un identificador único y establecer su estado inicial como “Nuevo”.
+6. Si faltan datos obligatorios o una imagen no cumple las condiciones permitidas, el sistema deberá informar el error y conservar los demás datos ingresados.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Es un flujo móvil separado del registro web del Solicitante.|
-| Negociable |Si |La necesidad está definida; los detalles de interacción móvil pueden acordarse.|
-| Valiosa |Si |Permite reportar problemas durante los recorridos.|
-| Estimable |Si |Se limita al registro móvil y su adaptación de interfaz.|
-| Pequeña |Si |La adaptación móvil y los adjuntos pueden ampliar el alcance.|
-| Verificable |Si |Se prueba el registro y la visualización en el ancho indicado.|
+| Independiente | Sí | El flujo móvil permite completar y registrar una incidencia sin depender de la pantalla web. |
+| Negociable | Sí | El registro desde el dispositivo móvil está definido; los detalles de interacción pueden acordarse. |
+| Valiosa | Sí | Permite informar problemas durante los recorridos sin volver a las instalaciones. |
+| Estimable | Sí | Se especifican los campos, las condiciones de las imágenes y el ancho mínimo de pantalla. |
+| Pequeña | Parcial | Combina el registro con la adaptación móvil y la carga de imágenes; el equipo deberá considerar ese alcance al estimarlo. |
+| Verificable | Sí | Se pueden probar el registro, las imágenes permitidas y el uso del formulario en una pantalla de 360 px sin desplazamiento horizontal. |
 
 ---
 
@@ -262,31 +264,33 @@ Verificable	Sí	Se prueban el registro, las validaciones, el identificador y el 
 
 ---
 
-## HU-10 — [Asignar prioridad a una incidencia]
+## HU-10 — Asignar prioridad a una incidencia
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Responsable de Sistemas, quiero asignar una prioridad a una incidencia según su urgencia e impacto, para ordenar su atención. |
-| Módulo |Módulo 4 — Gestión y asignación de incidencias|
-| Requisitos relacionados |RF-11|
+| Identificador | HU-10 |
+| Historia | Como Responsable de Sistemas, quiero asignar o actualizar la prioridad de una incidencia registrada, para ordenar su atención. |
+| Módulo | Módulo 4 — Gestión y asignación de incidencias |
+| Requisitos relacionados | RF-11 |
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir indicar los valores de urgencia e impacto definidos para la incidencia.
-2. El sistema deberá permitir asignar una prioridad de acuerdo con los criterios definidos para combinar urgencia e impacto.
-3. Antes de guardar, el sistema deberá mostrar los valores seleccionados para su revisión.
-4. El sistema deberá guardar la prioridad asociada a la incidencia y mostrar el resultado actualizado.
+1. El sistema deberá permitir al Responsable de Sistemas seleccionar una incidencia registrada.
+2. El sistema deberá mostrar la prioridad actual de la incidencia, si posee una, y las opciones disponibles: Baja, Media, Alta y Vital.
+3. El sistema deberá permitir seleccionar una prioridad y mostrarla antes de confirmar la operación.
+4. Al confirmar, el sistema deberá guardar la prioridad seleccionada y mostrar una confirmación de la operación realizada.
+5. Si no se selecciona una prioridad, el sistema deberá impedir la confirmación e indicar que debe seleccionarse una opción.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Puede implementarse aparte de la asignación de responsable y del cambio de estado. |
-| Negociable |Si | El flujo está definido; los detalles de interfaz pueden acordarse.|
-| Valiosa |Si |Ayuda a ordenar la atención de las incidencias. |
-| Estimable |Si |Falta definir la matriz o regla que relaciona urgencia, impacto y prioridad. |
-| Pequeña |Si |Se limita a registrar los valores y la prioridad.|
-| Verificable |Si | Se prueba que los valores se guardan según la regla definida.|
+| Independiente | Sí | La asignación de prioridad es una acción diferenciada de la actualización del estado y de la asignación del responsable. |
+| Negociable | Sí | Las prioridades disponibles y el resultado están definidos; los detalles de interacción pueden acordarse. |
+| Valiosa | Sí | Permite al Responsable de Sistemas ordenar la atención de las incidencias. |
+| Estimable | Sí | Las opciones de prioridad y el flujo de selección, confirmación y guardado están definidos; no se requiere una matriz de urgencia e impacto. |
+| Pequeña | Sí | Se limita a seleccionar y guardar la prioridad de una incidencia. |
+| Verificable | Sí | Se puede comprobar la selección de cada prioridad, su guardado y la validación si no se selecciona una opción. |
 
 ---
 
@@ -346,32 +350,33 @@ Verificable	Sí	Se prueban el registro, las validaciones, el identificador y el 
 
 ---
 
-## HU-13 — [Aceptar o rechazar una asignación externa]
+## HU-13 — Informar imposibilidad de atender una incidencia asignada
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Especialista Externo, quiero aceptar o rechazar una incidencia asignada, para confirmar si puedo hacerme cargo de su atención. |
-| Módulo |Módulo 4 — Gestión y asignación de incidencias |
-| Requisitos relacionados |RF-14|
+| Identificador | HU-13 |
+| Historia | Como Especialista Externo, quiero informar que no podré hacerme cargo de una incidencia que tengo asignada, para que el Responsable de Sistemas pueda reasignarla. |
+| Módulo | Módulo 4 — Gestión y asignación de incidencias |
+| Requisitos relacionados | RF-14 |
 
 ### Criterios de aceptación
 
-1. El sistema deberá mostrar al Especialista Externo las incidencias que esperan su respuesta de asignación.
-2. El sistema deberá permitir aceptar o rechazar cada asignación.
-3. El sistema deberá registrar la decisión del Especialista Externo y mostrar el resultado de la operación.
-4. El sistema deberá reflejar la decisión para que el Responsable de Sistemas pueda continuar la gestión.
+1. El sistema deberá permitir al Especialista Externo seleccionar una incidencia abierta que tenga asignada.
+2. El sistema deberá ofrecer la opción “Informar que no podré hacerme cargo”.
+3. Al confirmar el aviso, el sistema deberá registrar la información y asociarla a la incidencia y al Especialista Externo que la realizó.
+4. El sistema deberá informar al Responsable de Sistemas que la incidencia requiere una nueva asignación.
+5. El sistema no deberá reasignar automáticamente la incidencia; el Responsable de Sistemas deberá seleccionar al nuevo responsable.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |La respuesta del especialista es una acción separada de la asignación inicial. |
-| Negociable |Si |La necesidad está definida; la forma de presentar la decisión puede acordarse.|
-| Valiosa |Si |Permite confirmar si el especialista se hará cargo de la incidencia. |
-| Estimable |Si |Falta definir qué ocurre con la incidencia cuando la asignación se rechaza.|
-| Pequeña |Si | Se limita a aceptar o rechazar una asignación.|
-| Verificable |Si | Se comprueba que ambas decisiones quedan registradas y visibles para Sistemas.|
-
+| Independiente | Sí | El Especialista Externo puede informar que no podrá atender la incidencia sin que la reasignación se realice como parte de esta acción. |
+| Negociable | Sí | El resultado del aviso está definido; los detalles de cómo se presenta pueden acordarse. |
+| Valiosa | Sí | Permite que el Responsable de Sistemas se entere de que debe reasignar la incidencia. |
+| Estimable | Sí | Están definidos quién informa, sobre qué incidencia y qué ocurre después del aviso. |
+| Pequeña | Sí | Se limita a registrar el aviso y comunicarlo al Responsable de Sistemas. |
+| Verificable | Sí | Se comprueba que el aviso quede asociado a la incidencia y al especialista, que se informe a Sistemas y que no haya reasignación automática. |
 ---
 
 ## HU-14 — [Actualizar el estado como especialista externo]
