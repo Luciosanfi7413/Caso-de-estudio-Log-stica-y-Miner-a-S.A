@@ -2,10 +2,13 @@
 
 ## Diagrama general
 
-_Incluir el código PlantUML en `diagramas/casos-de-uso.puml`._
-_Visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/)._
+![Diagrama general de casos de uso](../diagramas/casos-de-uso.png)
 
-_Describir brevemente los actores identificados y las relaciones principales (include, extend)._
+[Ver código PlantUML](../diagramas/casos-de-uso.puml)
+
+El sistema cuenta con tres actores: el **Solicitante**, que registra incidencias y consulta las propias; el **Responsable de Sistemas**, que consulta y gestiona incidencias, asigna prioridades y responsables, y consulta el historial; y el **Especialista Externo**, que consulta las incidencias asignadas, acepta o rechaza asignaciones, actualiza su estado y registra seguimientos. Un chofer participa como Solicitante, sin un rol funcional distinto.
+
+La opción **Adjuntar archivo** extiende el registro de una incidencia porque es opcional. El registro de la resolución final y el cierre extienden el seguimiento. Las notificaciones al Solicitante se incluyen al actualizar el estado, asignar un responsable o cerrar una incidencia.
 
 ---
 
