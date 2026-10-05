@@ -322,31 +322,32 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-12 — [Asignar o reasignar el responsable]
+## HU-12 — Asignar o reasignar el responsable
 
 | Campo | Detalle |
 |-------|---------|
+| Identificador | HU-12 |
 | Historia | Como Responsable de Sistemas, quiero asignar o reasignar una incidencia a un responsable interno o a un Especialista Externo habilitado, para definir quién estará a cargo de su atención. |
-| Módulo |Módulo 4 — Gestión y asignación de incidencias |
-| Requisitos relacionados |RF-13|
+| Módulo | Módulo 4 — Gestión y asignación de incidencias |
+| Requisitos relacionados | RF-13 |
 
 ### Criterios de aceptación
 
 1. El sistema deberá permitir seleccionar una incidencia y consultar su responsable actual, si lo tiene.
-2. El sistema deberá permitir elegir entre un responsable interno y un Especialista Externo habilitado.
+2. El sistema deberá permitir elegir entre un responsable interno y un Especialista Externo.
 3. Si se elige un Especialista Externo, el sistema deberá mostrar únicamente especialistas habilitados para nuevas asignaciones.
-4. Al confirmar, el sistema deberá asociar el nuevo responsable, registrar el cambio e informar al Solicitante.
+4. Al confirmar, el sistema deberá asociar el nuevo responsable a la incidencia, registrar el cambio e informar al Solicitante.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |La asignación es una operación distinta del estado y la prioridad. |
-| Negociable |Si | El resultado está definido; la organización de la selección puede acordarse.|
-| Valiosa |Si |Identifica quién se ocupará de cada incidencia. |
-| Estimable |Si |Incluye responsables internos, externos habilitados y notificación. |
-| Pequeña |Si | Revisar si la selección de varios tipos de responsables amplía demasiado el alcance.|
-| Verificable |Si | Se prueban asignación, reasignación, filtro de especialistas e información al Solicitante.|
+| Independiente | Sí | La asignación o reasignación es una operación diferenciada de la actualización del estado y de la prioridad. |
+| Negociable | Sí | El resultado está definido; la presentación de las opciones puede acordarse. |
+| Valiosa | Sí | Permite identificar quién estará a cargo de atender cada incidencia. |
+| Estimable | Sí | Están definidos los tipos de responsable, la restricción para especialistas externos y las acciones posteriores a la confirmación. |
+| Pequeña | Sí | Se limita a una operación: seleccionar un responsable, asociarlo a la incidencia, registrar el cambio e informar al Solicitante. |
+| Verificable | Sí | Se pueden comprobar la asignación, la reasignación, el filtro de especialistas habilitados y la notificación. |
 
 ---
 
@@ -435,56 +436,59 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-16 — [Registrar intervenciones del especialista externo]
+## HU-16 — Registrar intervenciones del Especialista Externo
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como Especialista Externo, quiero registrar avances, diagnósticos, acciones realizadas o la solución aplicada, para documentar el tratamiento de las incidencias que tengo asignadas. |
-| Módulo |Módulo 5 — Resolución e historial de intervenciones|
-| Requisitos relacionados |RF-16|
+| Identificador | HU-16 |
+| Historia | Como Especialista Externo, quiero registrar avances, diagnósticos, acciones realizadas o soluciones propuestas en las incidencias que tengo asignadas, para documentar su tratamiento. |
+| Módulo | Módulo 5 — Resolución e historial de intervenciones |
+| Requisitos relacionados | RF-16 |
 
 ### Criterios de aceptación
 
 1. El sistema deberá permitir al Especialista Externo registrar información únicamente en incidencias que tenga asignadas.
-2. El sistema deberá permitir clasificar el registro como avance, diagnóstico, acción realizada o solución, según los tipos definidos.
+2. El sistema deberá permitir clasificar el registro como “Avance”, “Diagnóstico”, “Acción realizada” o “Solución propuesta”.
 3. El sistema deberá exigir una descripción antes de confirmar el registro.
-4. Al confirmar, el sistema deberá asociar el tipo, la descripción, la incidencia y el Especialista Externo al historial correspondiente.
+4. Al confirmar, el sistema deberá asociar el tipo de registro, la descripción, la incidencia y el Especialista Externo al historial, sin modificar el estado de la incidencia.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |El registro de intervenciones externas es distinto del registro realizado por Sistemas. |
-| Negociable |Si |Los tipos requeridos están identificados; la presentación puede acordarse.|
-| Valiosa |Si |Permite dar seguimiento al trabajo realizado por especialistas externos. |
-| Estimable |Si |Incluye selección del tipo, descripción y asociación al historial. |
-| Pequeña |Si | Si cada tipo requiere reglas distintas, convendría dividir la historia.|
-| Verificable |Si | Se prueban los tipos, la obligatoriedad de la descripción y la asociación al historial.|
+| Independiente | Sí | El registro de intervenciones externas es una acción diferenciada de las intervenciones registradas por Sistemas. |
+| Negociable | Sí | Los tipos de registro están definidos; los detalles de presentación pueden acordarse. |
+| Valiosa | Sí | Permite dar seguimiento al trabajo realizado por especialistas externos. |
+| Estimable | Sí | Están definidos los tipos, la descripción obligatoria y la asociación al historial. |
+| Pequeña | Sí | Aunque hay varios tipos de registro, todos siguen el mismo flujo: seleccionar un tipo, ingresar una descripción y confirmarla. |
+| Verificable | Sí | Se pueden probar los tipos disponibles, la obligatoriedad de la descripción, la asociación del registro a la incidencia y al especialista, y que el estado de la incidencia no cambie. |
 
 ---
 
-## HU-17 — [Registrar la resolución final y cerrar una incidencia]
+## HU-17 — Registrar la resolución final y cerrar una incidencia
 
 | Campo | Detalle |
 |-------|---------|
+| Identificador | HU-17 |
 | Historia | Como Responsable de Sistemas, quiero registrar la resolución final de una incidencia y cerrarla, para dejar constancia de su solución y finalizar su gestión. |
-| Módulo |Módulo 5 — Resolución e historial de intervenciones |
-| Requisitos relacionados |RF-17|
+| Módulo | Módulo 5 — Resolución e historial de intervenciones |
+| Requisitos relacionados | RF-17 |
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir registrar una resolución final cuando la incidencia esté en condiciones de ser cerrada.
+1. El sistema deberá permitir registrar una resolución final cuando la incidencia se encuentre en estado “Resuelto”.
 2. El sistema deberá exigir la descripción de la resolución final antes de confirmar.
-3. Al confirmar, el sistema deberá incorporar la resolución al historial y establecer el estado de la incidencia como Cerrado.
-4. El sistema deberá informar al Solicitante sobre el cierre de la incidencia.
+3. La ausencia de acciones previas no deberá impedir registrar la resolución final.
+4. Al confirmar, el sistema deberá incorporar la resolución al historial y establecer el estado de la incidencia como “Cerrado”.
+5. El sistema deberá informar al Solicitante sobre el cierre de la incidencia.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |El cierre puede implementarse aparte del registro de acciones intermedias. |
-| Negociable |Si | El resultado está definido; los detalles de confirmación pueden acordarse.|
-| Valiosa |Si |Finaliza formalmente la gestión y conserva su solución. |
-| Estimable |Si |Incluye resolución final, cierre e información al Solicitante. |
-| Pequeña |Si | Si el flujo de resolución tiene varias reglas adicionales, revisar su división.|
-| Verificable |Si | Se comprueban la descripción obligatoria, el estado Cerrado y la notificación.|
+| Independiente | Sí | El registro de la resolución final y el cierre son una acción diferenciada del registro de acciones intermedias. |
+| Negociable | Sí | El resultado está definido; los detalles de presentación y confirmación pueden acordarse. |
+| Valiosa | Sí | Finaliza formalmente la gestión y conserva la resolución en el historial. |
+| Estimable | Sí | Están definidos el estado requerido, la descripción, el cierre y la notificación al Solicitante. |
+| Pequeña | Sí | Se limita a registrar una resolución final, cerrar la incidencia e informar al Solicitante. |
+| Verificable | Sí | Se pueden probar el estado “Resuelto”, la descripción obligatoria, el cierre, la notificación y el caso sin acciones previas. |
