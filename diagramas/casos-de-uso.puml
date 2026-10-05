@@ -21,7 +21,7 @@ rectangle "Sistema de gestión de incidencias\nLogística y Minería S.A." {
   usecase "CU-08\nConsultar incidencias asignadas" as CU08
   usecase "CU-09 / CU-12\nRegistrar seguimiento" as CU09
   usecase "Registrar resolución final\ny cerrar incidencia" as Cerrar
-  usecase "CU-13\nAceptar o rechazar asignación" as CU13
+  usecase "CU-13\nInformar imposibilidad de atender una incidencia" as CU13
 
   usecase "Notificar al Solicitante" as Notificar
 }
@@ -37,6 +37,7 @@ Sistemas -- CU07
 Sistemas -- CU09
 Sistemas -- CU10
 Sistemas -- Cerrar
+Sistemas -- CU13
 
 Externo -- CU05
 Externo -- CU08
@@ -49,4 +50,5 @@ CU05 ..> Notificar : <<include>>
 CU06 ..> Notificar : <<include>>
 Cerrar ..> Notificar : <<include>>
 Cerrar ..> CU09 : <<extend>>
+
 @enduml
