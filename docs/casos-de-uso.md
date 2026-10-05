@@ -117,34 +117,32 @@ _Describir brevemente los actores identificados y las relaciones principales (in
 |-------|---------|
 | Identificador | CU-04 |
 | Nombre | Asignar prioridad a incidencia |
-| Descripción | Permite al Responsable de Sistemas asignar una prioridad a una incidencia registrada considerando su urgencia e impacto. |
+| Descripción | Permite al Responsable de Sistemas asignar una prioridad a una incidencia registrada.
 | Actores | Principal: Responsable de Sistemas / Secundario: Ninguno |
-| Precondiciones | Debe existir al menos una incidencia registrada. |
+| Precondiciones | Debe existir al menos una incidencia registrada a la que se le pueda asignar o actualizar la prioridad. |
 | Postcondiciones | Éxito: la incidencia queda registrada con la prioridad asignada. / Fallo: la prioridad no se modifica y el sistema informa el motivo. |
 
 ### Secuencia normal
 
 | # | Acción (actor) | Reacción (sistema) |
 |---|----------------|--------------------|
-| 1 | El Responsable de Sistemas accede a la funcionalidad de asignación de prioridad. | El sistema muestra las incidencias registradas e informa para cada una su identificador, Solicitante, tipo de incidencia, elemento afectado, estado y prioridad actual, si posee una. |
-| 2 | El Responsable de Sistemas selecciona una de las incidencias disponibles. | El sistema muestra el detalle de la incidencia seleccionada y presenta las opciones disponibles para establecer su urgencia, impacto y prioridad. |
-| 3 | El Responsable de Sistemas selecciona el nivel de urgencia correspondiente a la incidencia. | El sistema registra el nivel de urgencia seleccionado. |
-| 4 | El Responsable de Sistemas selecciona el nivel de impacto correspondiente a la incidencia. | El sistema registra el nivel de impacto seleccionado. |
-| 5 | El Responsable de Sistemas selecciona la prioridad correspondiente considerando la urgencia y el impacto definidos. | El sistema registra la prioridad seleccionada y muestra los valores de urgencia, impacto y prioridad antes de su confirmación. |
-| 6 | El Responsable de Sistemas confirma la asignación de prioridad. | El sistema guarda la prioridad en la incidencia y muestra una confirmación de la operación realizada. |
+| 1 | El Responsable de Sistemas accede a la funcionalidad de asignación de prioridad. | El sistema muestra las incidencias registradas e informa para cada una su identificador, Solicitante, tipo de incidencia, elemento afectado, estado, responsable y prioridad actual, si posee una. |
+| 2 | El Responsable de Sistemas selecciona una incidencia disponible. | El sistema muestra el detalle de la incidencia y presenta las opciones disponibles para establecer la prioridad: Baja, Media, Alta y Vital. |
+| 3 | El Responsable de Sistemas selecciona una prioridad. | El sistema muestra la prioridad seleccionada y habilita la confirmación de la operación. |
+| 4 | El Responsable de Sistemas confirma la asignación o actualización de prioridad. | El sistema guarda la prioridad seleccionada en la incidencia y muestra una confirmación de la operación realizada. |
 
 ### Excepciones
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
-| E1 | El Responsable de Sistemas intenta confirmar la asignación sin seleccionar alguno de los valores obligatorios de urgencia, impacto o prioridad. | El sistema informa cuáles son los valores que faltan seleccionar e impide confirmar la asignación. |
+| E1 | El Responsable de Sistemas deja la prioridad sin seleccionar. | El sistema mantiene deshabilitado el botón “Guardar” e indica que debe seleccionar una prioridad para continuar.
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento | El guardado de la prioridad deberá completarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
+| Rendimiento | El listado y el guardado de la prioridad deberán completarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
 | Frecuencia | Cada vez que el Responsable de Sistemas necesite asignar o actualizar la prioridad de una incidencia registrada. |
 | Importancia | Importante |
-| Urgencia | Vital |
+| Urgencia | Media |
 ---
 ## CU-05 — Actualizar estado de incidencia
 
