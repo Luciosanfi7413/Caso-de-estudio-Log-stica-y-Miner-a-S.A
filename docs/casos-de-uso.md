@@ -12,7 +12,7 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 
 ---
 
-## CU-01 — [Registro de incidencia.]
+## CU-01 — Registro de incidencia
 
 | Campo | Detalle |
 |-------|---------|
@@ -20,20 +20,20 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Nombre | Registro de incidencia |
 | Descripción | Permite al Solicitante reportar una falla o solicitud técnica mediante un formulario estandarizado que asocia la incidencia a su identidad. |
 | Actores | Principal: Solicitante (Empleado) / Secundario: Ninguno |
-| Precondiciones | El Solicitante inició sesión en el sistema. |
+| Precondiciones | Ninguna. |
 | Postcondiciones | Éxito: la incidencia queda registrada, asociada al Solicitante, con un identificador único y estado “Nuevo”, disponible para su gestión. / Fallo: la incidencia no se registra y el sistema informa el motivo. |
 
 ### Secuencia normal
 
 | # | Acción (actor) | Reacción (sistema) |
 |---|----------------|--------------------|
-| 1 | El Solicitante accede a la funcionalidad de registro de incidencias. | El sistema presenta el formulario con los campos Tipo de incidencia, Elemento afectado, Identificador del elemento, Descripción del problema y Adjunto de imágenes (opcional). Para Tipo de incidencia, presenta las opciones “Falla técnica” y “Solicitud técnica”. Para Elemento afectado, presenta las opciones “Equipo informático”, “Dispositivo móvil”, “Vehículo” y “Software / Aplicación”. |
-| 2 | El Solicitante selecciona una opción de Tipo de incidencia. | El sistema registra la opción seleccionada. |
+| 1 | El Solicitante accede a la funcionalidad de registro de incidencias. | El sistema presenta el formulario con los campos Tipo de incidencia, Elemento afectado, Identificador del elemento, Descripción del problema y Adjunto de imágenes (opcional). Para Tipo de incidencia, presenta las opciones “Falla técnica” y “Solicitud técnica”. Para Elemento afectado, presenta “Equipo informático”, “Dispositivo móvil”, “Vehículo” y “Software / Aplicación”. |
+| 2 | El Solicitante selecciona una opción de Tipo de incidencia. | El sistema registra la opción seleccionada en el formulario. |
 | 3 | El Solicitante selecciona una opción de Elemento afectado. | El sistema registra la selección y habilita el campo de identificación correspondiente: código o número de serie para Equipo informático; IMEI o identificador para Dispositivo móvil; patente para Vehículo; y nombre o código de aplicación para Software / Aplicación. |
-| 4 | El Solicitante ingresa el identificador del elemento afectado. | El sistema verifica que el identificador corresponda a un elemento registrado y que no exista una incidencia abierta asociada a ese elemento. Si ambas validaciones son correctas, muestra la información correspondiente al elemento y permite continuar. |
-| 5 | El Solicitante completa la descripción del problema. | El sistema registra la descripción ingresada en el formulario. |
-| 6 | Opcionalmente, el Solicitante adjunta una o más imágenes relacionadas con la incidencia. | El sistema valida el formato y tamaño de los archivos. Si cumplen las condiciones establecidas, los incorpora al formulario e informa que se adjuntaron correctamente. |
-| 7 | El Solicitante confirma el registro de la incidencia. | El sistema valida los campos obligatorios y, si la información es correcta, registra la incidencia, la asocia al Solicitante autenticado, le asigna un identificador único, establece el estado “Nuevo” y la deja disponible para su gestión. |
+| 4 | El Solicitante ingresa el identificador del elemento afectado. | El sistema verifica que el identificador corresponda a un elemento registrado y que no exista otra incidencia asociada a ese elemento cuyo estado sea distinto de “Cerrado”. Si ambas validaciones son correctas, muestra la información correspondiente al elemento y permite continuar. |
+| 5 | El Solicitante completa la descripción del problema. | El sistema muestra la descripción ingresada en el formulario. |
+| 6 | Opcionalmente, el Solicitante adjunta una o más imágenes relacionadas con la incidencia. | El sistema valida que cada imagen esté en formato PNG o JPEG y que no supere los 15 MB. Si cumple ambas condiciones, la incorpora al formulario y confirma que se adjuntó correctamente. |
+| 7 | El Solicitante confirma el registro de la incidencia. | El sistema valida los campos obligatorios y, si la información es correcta, registra la incidencia, la asocia al Solicitante, le asigna un identificador único, establece el estado “Nuevo” y la deja disponible para su gestión. |
 
 ### Excepciones
 
@@ -41,8 +41,8 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 |---|-----------|-----------------------|
 | E1 | El Solicitante intenta registrar la incidencia sin completar uno o más campos obligatorios. | El sistema informa cuáles son los campos obligatorios que faltan completar e impide el registro de la incidencia. |
 | E2 | El Solicitante ingresa un identificador que no corresponde a un elemento registrado. | El sistema informa que el identificador ingresado no corresponde a un elemento registrado e impide continuar hasta que se ingrese un identificador válido. |
-| E3 | El Solicitante ingresa el identificador de un elemento que ya posee una incidencia abierta. | El sistema informa que ya existe una incidencia abierta asociada al elemento, muestra su identificador y estado, e impide registrar una nueva incidencia para el mismo elemento mientras la anterior permanezca abierta. |
-| E4 | El Solicitante intenta adjuntar una imagen que no cumple las condiciones establecidas de formato o tamaño. | El sistema rechaza el archivo, informa el motivo y mantiene disponible la información previamente ingresada en el formulario. |
+| E3 | El Solicitante ingresa el identificador de un elemento que ya posee una incidencia cuyo estado es distinto de “Cerrado”. | El sistema informa que ya existe una incidencia abierta asociada al elemento, muestra su identificador y estado, e impide registrar una nueva incidencia para el mismo elemento. |
+| E4 | El Solicitante intenta adjuntar una imagen en un formato distinto de PNG o JPEG, o que supera los 15 MB. | El sistema rechaza el archivo, informa si el motivo es el formato o el tamaño y conserva la información ingresada en el formulario. |
 
 | Campo | Detalle |
 |-------|---------|
@@ -225,7 +225,7 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Descripción | Permite al Responsable de Sistemas registrar especialistas externos y administrar su habilitación para participar en la gestión de incidencias. |
 | Actores | Principal: Responsable de Sistemas / Secundario: Ninguno |
 | Precondiciones | Ninguna. |
-| Postcondiciones | Éxito: la información y el estado de acceso del Especialista Externo quedan registrados según la operación realizada. / Fallo: la información y el estado de acceso no se modifican y el sistema informa el motivo. |
+| Postcondiciones | Éxito: la información y el estado de acceso del especialista externo quedan registrados según la operación realizada. Si se revoca su acceso, deja de estar disponible para nuevas asignaciones y sus incidencias abiertas quedan identificadas para su reasignación manual. / Fallo: los datos o el estado de acceso no se modifican y el sistema informa el motivo. |
 
 ### Secuencia normal
 
@@ -234,23 +234,22 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | 1 | El Responsable de Sistemas accede a la funcionalidad de gestión de especialistas externos. | El sistema muestra los especialistas externos registrados e informa para cada uno nombre, especialidad, correo electrónico y estado de acceso. Además, presenta la opción “Registrar especialista externo”. |
 | 2 | El Responsable de Sistemas selecciona la opción “Registrar especialista externo”. | El sistema presenta un formulario e identifica como campos obligatorios nombre, especialidad y correo electrónico, y como opcional teléfono. |
 | 3 | El Responsable de Sistemas completa los datos solicitados. | El sistema muestra la información ingresada en cada campo. |
-| 4 | El Responsable de Sistemas confirma el registro del Especialista Externo. | El sistema valida los campos obligatorios, registra al Especialista Externo, establece su estado como “Habilitado” y lo deja disponible para ser asignado a incidencias. |
-| 5 | El Responsable de Sistemas selecciona a uno de los especialistas externos registrados. | El sistema muestra su información, su estado de acceso actual y las acciones disponibles según ese estado: “Habilitar acceso” o “Revocar acceso”. |
-| 6 | El Responsable de Sistemas selecciona una de las acciones de acceso disponibles. | El sistema registra la selección y muestra el cambio de estado que se realizará antes de confirmarlo. |
-| 7 | El Responsable de Sistemas confirma el cambio de acceso. | El sistema actualiza el estado de acceso del especialista. Si queda habilitado, puede ser seleccionado para nuevas asignaciones; si se revoca su acceso, deja de estar disponible para nuevas asignaciones. |
+| 4 | El Responsable de Sistemas confirma el registro del especialista externo. | El sistema valida los campos obligatorios, registra al especialista externo, establece su estado como “Habilitado” y lo deja disponible para nuevas asignaciones. |
+| 5 | El Responsable de Sistemas selecciona a uno de los especialistas externos registrados. | El sistema muestra su información, su estado de acceso actual y la acción disponible según ese estado: “Habilitar acceso” o “Revocar acceso”. |
+| 6 | El Responsable de Sistemas selecciona una acción de acceso disponible. | El sistema muestra el cambio de estado que se realizará y solicita confirmación. |
+| 7 | El Responsable de Sistemas confirma el cambio de acceso. | El sistema actualiza el estado de acceso del especialista. Si queda habilitado, vuelve a estar disponible para nuevas asignaciones. Si se revoca su acceso, deja de estar disponible y el sistema identifica las incidencias abiertas que tiene asignadas para que el Responsable de Sistemas las reasigne manualmente. |
 
 ### Excepciones
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
-| E1 | El Responsable de Sistemas intenta confirmar el registro sin completar uno o más campos obligatorios. | El sistema informa cuáles son los campos que faltan completar e impide registrar al Especialista Externo. |
-| E2 | El Responsable de Sistemas ingresa un correo electrónico que ya se encuentra asociado a otro Especialista Externo registrado. | El sistema informa que el correo electrónico ya se encuentra registrado e impide confirmar un nuevo registro con el mismo correo. |
-| E3 | El Responsable de Sistemas revoca el acceso de un Especialista Externo que tiene incidencias abiertas asignadas. | El sistema revoca el acceso del especialista y evita que reciba nuevas asignaciones. Las incidencias abiertas quedan identificadas como pendientes de reasignación y disponibles para que el Responsable de Sistemas las reasigne. |
+| E1 | El Responsable de Sistemas intenta confirmar el registro sin completar uno o más campos obligatorios. | El sistema informa cuáles son los campos que faltan completar e impide registrar al especialista externo. |
+| E2 | El Responsable de Sistemas ingresa un correo electrónico que ya se encuentra asociado a otro especialista externo registrado. | El sistema informa que el correo electrónico ya se encuentra registrado e impide confirmar un nuevo registro con el mismo correo. |
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento | El registro del Especialista Externo y la actualización de su estado de acceso deberán guardarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
-| Frecuencia | Cada vez que el Responsable de Sistemas necesite registrar un Especialista Externo, habilitar su acceso o revocarlo. |
+| Rendimiento | El listado, el registro de un especialista y la actualización de su estado de acceso deberán completarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
+| Frecuencia | Cada vez que el Responsable de Sistemas necesite registrar un especialista externo o habilitar o revocar su acceso. |
 | Importancia | Importante |
 | Urgencia | Vital |
 
@@ -263,8 +262,8 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Nombre | Gestionar incidencia como Especialista Externo |
 | Descripción | Permite al Especialista Externo consultar las incidencias que le fueron asignadas y registrar información relacionada con su tratamiento. |
 | Actores | Principal: Especialista Externo / Secundario: Ninguno |
-| Precondiciones | El Especialista Externo debe encontrarse habilitado y poseer al menos una incidencia asignada. |
-| Postcondiciones | Éxito: la información registrada por el Especialista Externo queda incorporada a la incidencia y disponible para su seguimiento. / Fallo: la información no se incorpora y el sistema informa el motivo. |
+| Precondiciones | El Especialista Externo debe encontrarse habilitado y tener al menos una incidencia asignada. |
+| Postcondiciones | Éxito: la información registrada queda incorporada al historial de la incidencia y disponible para su seguimiento, sin modificar su estado. / Fallo: la información no se incorpora y el sistema informa el motivo. |
 
 ### Secuencia normal
 
@@ -275,13 +274,14 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | 3 | El Especialista Externo selecciona la opción “Registrar seguimiento”. | El sistema presenta un formulario con los tipos de registro disponibles: “Avance”, “Diagnóstico”, “Acción realizada” y “Solución propuesta”, junto con un campo para ingresar la descripción correspondiente. |
 | 4 | El Especialista Externo selecciona uno de los tipos de registro disponibles. | El sistema registra la opción seleccionada y habilita el campo “Descripción”. |
 | 5 | El Especialista Externo completa la descripción con la información correspondiente al tratamiento de la incidencia. | El sistema muestra la información ingresada y la mantiene disponible para su confirmación. |
-| 6 | El Especialista Externo confirma el registro del seguimiento. | El sistema valida la información ingresada, incorpora el registro a la incidencia indicando su tipo y registra al Especialista Externo como responsable de la información incorporada. |
+| 6 | El Especialista Externo confirma el registro del seguimiento. | El sistema valida la información ingresada, incorpora el registro al historial de la incidencia indicando su tipo y registra al Especialista Externo como responsable de la información. El estado de la incidencia permanece sin cambios. |
 
 ### Excepciones
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
 | E1 | El Especialista Externo intenta confirmar el seguimiento sin seleccionar un tipo de registro o sin completar la descripción. | El sistema informa cuáles son los datos obligatorios que faltan completar e impide registrar el seguimiento. |
+| E2 | Antes de confirmar el seguimiento, el Especialista Externo deja de estar habilitado o la incidencia deja de estar asignada a su responsabilidad. | El sistema impide registrar el seguimiento e informa que el acceso o la asignación ya no están vigentes. |
 
 | Campo | Detalle |
 |-------|---------|
@@ -290,41 +290,39 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Importancia | Importante |
 | Urgencia | Vital |
 
----
-
 ## CU-09 — Registrar seguimiento y resolución de incidencia
 
 | Campo | Detalle |
 |-------|---------|
 | Identificador | CU-09 |
 | Nombre | Registrar seguimiento y resolución de incidencia |
-| Descripción | Permite al Responsable de Sistemas registrar las acciones realizadas durante el tratamiento de una incidencia y registrar su resolución final cuando corresponda. |
-| Actores | Principal: Responsable de Sistemas / Secundario: Ninguno |
+| Descripción | Permite al Responsable de Sistemas registrar acciones realizadas durante el tratamiento de una incidencia y registrar su resolución final cuando corresponda. |
+| Actores | Principal: Responsable de Sistemas / Secundario: Solicitante |
 | Precondiciones | Debe existir al menos una incidencia registrada que no se encuentre cerrada. |
-| Postcondiciones | Éxito: la información ingresada queda registrada en la incidencia. Si se registra la resolución final, la incidencia queda con estado “Cerrado”. / Fallo: la información no se registra y el sistema informa el motivo. |
+| Postcondiciones | Éxito: la información ingresada queda incorporada al historial de la incidencia. Si se registra una resolución final, la incidencia queda con estado “Cerrado” y el Solicitante es informado. / Fallo: la información no se incorpora y el sistema informa el motivo. |
 
 ### Secuencia normal
 
 | # | Acción (actor) | Reacción (sistema) |
 |---|----------------|--------------------|
-| 1 | El Responsable de Sistemas accede al listado de incidencias registradas. | El sistema muestra las incidencias registradas e informa para cada una su identificador, Solicitante, tipo de incidencia, elemento afectado, prioridad, estado y responsable asignado. |
-| 2 | El Responsable de Sistemas selecciona el identificador de una incidencia. | El sistema muestra el detalle de la incidencia. Si no se encuentra en estado “Cerrado”, presenta la opción “Registrar información”. |
-| 3 | El Responsable de Sistemas selecciona la opción “Registrar información”. | El sistema presenta los tipos de registro disponibles según el estado de la incidencia. Para incidencias en estado “Nuevo”, “En curso” o “Pendiente”, presenta “Acción realizada”. Si la incidencia se encuentra en estado “Resuelto”, presenta además “Resolución final”. |
-| 4 | El Responsable de Sistemas selecciona uno de los tipos de registro disponibles. | El sistema registra la opción seleccionada y habilita el campo de descripción correspondiente. |
+| 1 | El Responsable de Sistemas accede al listado de incidencias registradas. | El sistema muestra las incidencias e informa para cada una su identificador, Solicitante, tipo de incidencia, elemento afectado, prioridad, estado y responsable asignado. |
+| 2 | El Responsable de Sistemas selecciona una incidencia que no se encuentra cerrada. | El sistema muestra el detalle de la incidencia y presenta la opción “Registrar información”. |
+| 3 | El Responsable de Sistemas selecciona la opción “Registrar información”. | El sistema presenta los tipos de registro disponibles según el estado de la incidencia. Para los estados “Nuevo”, “En curso” o “Pendiente”, presenta “Acción realizada”. Si la incidencia está en estado “Resuelto”, presenta “Acción realizada” y “Resolución final”. |
+| 4 | El Responsable de Sistemas selecciona uno de los tipos de registro disponibles. | El sistema registra la opción seleccionada y habilita el campo para ingresar la descripción correspondiente. |
 | 5 | El Responsable de Sistemas completa la descripción de la acción realizada o de la resolución final. | El sistema muestra la información ingresada y la mantiene disponible para su confirmación. |
-| 6 | El Responsable de Sistemas confirma el registro de la información. | El sistema valida la información ingresada y la incorpora a la incidencia. Si corresponde a una acción realizada, mantiene el estado actual de la incidencia. Si corresponde a una resolución final, registra la resolución, establece el estado “Cerrado” y notifica al Solicitante sobre el cierre de la incidencia. |
+| 6 | El Responsable de Sistemas confirma el registro de la información. | El sistema valida la descripción e incorpora el registro al historial. Si corresponde a una acción realizada, mantiene el estado actual de la incidencia. Si corresponde a una resolución final, registra la resolución, establece el estado “Cerrado” y notifica al Solicitante. La resolución final puede registrarse aunque no existan acciones previas en el historial. |
 
 ### Excepciones
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
 | E1 | El Responsable de Sistemas intenta confirmar el registro sin completar la descripción. | El sistema informa que la descripción es obligatoria e impide registrar la información. |
-| E2 | El Responsable de Sistemas registra una resolución final sin que existan acciones previas en la incidencia. | El sistema permite continuar, valida que la descripción de la resolución esté completa, registra la resolución final y establece el estado “Cerrado”. |
+| E2 | La incidencia se cierra antes de que el Responsable de Sistemas confirme el registro. | El sistema impide incorporar el registro e informa que la incidencia ya está cerrada. |
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento | La consulta de incidencias y el registro de la información deberán completarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
-| Frecuencia | Cada vez que el Responsable de Sistemas necesite registrar una acción realizada o, cuando la incidencia esté en estado “Resuelto”, registrar su resolución final. |
+| Rendimiento | El registro de una acción o de una resolución final deberá completarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
+| Frecuencia | Cada vez que el Responsable de Sistemas necesite registrar una acción realizada o cerrar una incidencia con su resolución final. |
 | Importancia | Importante |
 | Urgencia | Vital |
 
@@ -371,9 +369,9 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Identificador | CU-11 |
 | Nombre | Actualizar estado de incidencia asignada |
 | Descripción | Permite al Especialista Externo actualizar el estado de una incidencia que tiene asignada durante su gestión. |
-| Actores | Principal: Especialista Externo / Secundario: Ninguno |
+| Actores | Principal: Especialista Externo / Secundario: Solicitante (recibe la notificación) |
 | Precondiciones | El Especialista Externo debe tener al menos una incidencia asignada. |
-| Postcondiciones | Éxito: el nuevo estado de la incidencia queda registrado y visible para el usuario. / Fallo: el estado no se modifica y el sistema informa el motivo. |
+| Postcondiciones | Éxito: el nuevo estado queda registrado en el historial de la incidencia y el Solicitante es informado del cambio. / Fallo: el estado no se modifica y el sistema informa el motivo. |
 
 ### Secuencia normal
 
@@ -383,7 +381,7 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | 2 | El Especialista Externo selecciona la opción “Gestionar incidencia”. | El sistema muestra la información de gestión de la incidencia y permite modificar únicamente su estado. La prioridad y el responsable asignado se muestran sin posibilidad de modificación. |
 | 3 | El Especialista Externo despliega los estados disponibles. | El sistema muestra los estados habilitados para la incidencia: “En curso”, “Pendiente” y “Resuelto”. |
 | 4 | El Especialista Externo selecciona un nuevo estado. | El sistema muestra el estado seleccionado y mantiene disponibles las opciones para guardar o cancelar los cambios. |
-| 5 | El Especialista Externo selecciona “Guardar cambios”. | El sistema actualiza el estado de la incidencia y registra el cambio realizado. |
+| 5 | El Especialista Externo selecciona “Guardar cambios”. | El sistema actualiza el estado de la incidencia, registra el cambio en su historial y notifica al Solicitante el nuevo estado. |
 
 ### Excepciones
 
@@ -391,6 +389,7 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 |---|-----------|-----------------------|
 | E1 | Al guardar el nuevo estado, la incidencia ya no está asignada al Especialista Externo. | El sistema impide la actualización, informa que la asignación cambió y muestra los datos actuales de la incidencia. |
 | E2 | Otro usuario actualiza el estado después de que el Especialista Externo abrió la incidencia y antes de que guarde sus cambios. | El sistema detecta que el estado cambió, no sobrescribe la actualización previa e informa el estado actual para que el Especialista Externo vuelva a consultarlo. |
+
 | Campo | Detalle |
 |-------|---------|
 | Rendimiento | La actualización del estado deberá guardarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
@@ -441,31 +440,30 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 |-------|---------|
 | Identificador | CU-13 |
 | Nombre | Informar imposibilidad de atender una incidencia asignada |
-| Descripción | Permite al Especialista Externo informar que no podrá hacerse cargo de una incidencia que tiene asignada, para que el Responsable de Sistemas evalúe su reasignación. |
+| Descripción | Permite al Especialista Externo informar al Responsable de Sistemas que no podrá hacerse cargo de una incidencia que tiene asignada, para que este pueda reasignarla. |
 | Actores | Principal: Especialista Externo / Secundario: Responsable de Sistemas |
-| Precondiciones | El Especialista Externo debe encontrarse habilitado y tener asignada una incidencia que no esté cerrada. |
-| Postcondiciones | Éxito: el sistema registra el aviso, conserva el estado actual de la incidencia y la deja disponible para que el Responsable de Sistemas la reasigne. / Fallo: el aviso no se registra y el sistema informa el motivo. |
+| Precondiciones | El Especialista Externo debe encontrarse habilitado y tener asignada la incidencia. |
+| Postcondiciones | Éxito: el sistema registra el aviso, lo informa al Responsable de Sistemas e identifica la incidencia como pendiente de reasignación. La incidencia conserva su responsable y estado actuales hasta que el Responsable de Sistemas realice la reasignación. / Fallo: el aviso no se registra y el sistema informa el motivo. |
 
 ### Secuencia normal
 
 | # | Acción (actor) | Reacción (sistema) |
 |---|----------------|--------------------|
-| 1 | El Especialista Externo accede al listado de incidencias asignadas. | El sistema muestra las incidencias asignadas al Especialista Externo. |
-| 2 | El Especialista Externo selecciona la incidencia que no podrá atender. | El sistema muestra el detalle y la opción “Informar que no podré hacerme cargo”. |
+| 1 | El Especialista Externo accede a la funcionalidad de incidencias asignadas. | El sistema muestra las incidencias asignadas al Especialista Externo e informa para cada una su identificador, tipo, elemento afectado, prioridad y estado actual. |
+| 2 | El Especialista Externo selecciona la incidencia que no podrá atender. | El sistema muestra el detalle de la incidencia y presenta la opción “Informar que no podré atender esta incidencia”. |
 | 3 | El Especialista Externo selecciona esa opción. | El sistema solicita confirmar el envío del aviso. |
-| 4 | El Especialista Externo confirma el envío. | El sistema registra el aviso asociado a la incidencia y al Especialista Externo, informa al Responsable de Sistemas y deja la incidencia disponible para su reasignación. |
+| 4 | El Especialista Externo confirma el aviso. | El sistema registra el aviso en el historial de la incidencia, la identifica como pendiente de reasignación y notifica al Responsable de Sistemas. El responsable asignado y el estado de la incidencia no se modifican. |
 
 ### Excepciones
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
-| E1 | El Especialista Externo intenta informar que no podrá atender una incidencia que ya no tiene asignada. | El sistema informa que la incidencia ya no está asignada al Especialista Externo y no registra el aviso. |
-| E2 | El Especialista Externo intenta informar que no podrá atender una incidencia que ya está cerrada. | El sistema informa que la incidencia está cerrada y no permite registrar el aviso. |
-| E3 | El Especialista Externo vuelve a enviar un aviso que ya había registrado para la misma incidencia. | El sistema informa que el aviso ya fue registrado y evita duplicarlo. |
+| E1 | Antes de confirmar el aviso, la incidencia deja de estar asignada al Especialista Externo o este deja de estar habilitado. | El sistema impide registrar el aviso e informa que la asignación o el acceso ya no están vigentes. |
+| E2 | El Especialista Externo intenta informar nuevamente que no podrá atender una incidencia que ya está pendiente de reasignación. | El sistema informa que ya existe un aviso pendiente para esa incidencia y no registra otro. |
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento | El sistema deberá registrar el aviso y dejarlo disponible para el Responsable de Sistemas en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
-| Frecuencia | Cada vez que un Especialista Externo necesite informar que no podrá hacerse cargo de una incidencia asignada. |
+| Rendimiento | El registro del aviso y la notificación al Responsable de Sistemas deberán completarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
+| Frecuencia | Cada vez que un Especialista Externo no pueda hacerse cargo de una incidencia que tiene asignada. |
 | Importancia | Importante |
-| Urgencia | Inmediata |
+| Urgencia | Vital |

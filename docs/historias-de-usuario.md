@@ -61,31 +61,33 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 ---
 
 
-## HU-03 — [Revocar el acceso de un especialista externo]
+## HU-03 — Revocar el acceso de un Especialista Externo
 
 | Campo | Detalle |
 |-------|---------|
+| Identificador | HU-03 |
 | Historia | Como Responsable de Sistemas, quiero revocar el acceso de un Especialista Externo, para impedir que siga participando en nuevas asignaciones cuando ya no esté autorizado. |
-| Módulo |Módulo 1 — Acceso y gestión de usuarios |
-| Requisitos relacionados |RF-03|
+| Módulo | Módulo 1 — Acceso y gestión de usuarios |
+| Requisitos relacionados | RF-03 |
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir al Responsable de Sistemas revocar el acceso de un especialista registrado.
-2. Antes de aplicar el cambio, el sistema deberá mostrar qué especialista será afectado y el cambio de estado previsto.
-3. Una vez revocado el acceso, el especialista no deberá estar disponible para nuevas asignaciones.
-4. El sistema deberá mostrar el estado de acceso actualizado en la gestión de especialistas.
+1. El sistema deberá permitir al Responsable de Sistemas seleccionar un Especialista Externo registrado y revocar su acceso.
+2. Antes de confirmar, el sistema deberá mostrar el especialista seleccionado y las incidencias abiertas que tiene asignadas, si las hubiera.
+3. Al confirmar, el sistema deberá revocar el acceso del especialista e impedir que quede disponible para nuevas asignaciones.
+4. Si el especialista tiene incidencias abiertas asignadas, el sistema deberá identificarlas como pendientes de reasignación, sin cambiar automáticamente el responsable.
+5. El sistema deberá mostrar el estado de acceso actualizado del especialista.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |La revocación es una acción diferenciada del registro del especialista. |
-| Negociable |Si | El resultado está definido; la interacción puede ajustarse.|
-| Valiosa |Si |Permite retirar el acceso cuando el especialista deja de estar autorizado. |
-| Estimable |Si |La acción y su efecto sobre nuevas asignaciones están delimitados. |
-| Pequeña |Si | No contempla la eliminación del especialista ni la gestión de incidencias.|
-| Verificable |Si | Se comprueba el cambio de estado y que ya no figure disponible para nuevas asignaciones.|
+| Independiente | Sí | La revocación es una acción diferenciada del registro y la habilitación del especialista. |
+| Negociable | Sí | El resultado de la revocación está definido; los detalles de presentación pueden acordarse. |
+| Valiosa | Sí | Permite retirar el acceso cuando el especialista deja de estar autorizado. |
+| Estimable | Sí | Están definidos el cambio de acceso y el tratamiento de sus incidencias abiertas. |
+| Pequeña | Sí | Se limita a revocar el acceso e identificar las incidencias que requieren reasignación; la reasignación se realiza en otra historia. |
+| Verificable | Sí | Se pueden comprobar la revocación, la indisponibilidad para nuevas asignaciones y la identificación de incidencias pendientes de reasignación. |
 
 ---
 
@@ -380,31 +382,32 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 | Verificable | Sí | Se comprueba que el aviso quede asociado a la incidencia y al especialista, que se informe a Sistemas y que no haya reasignación automática. |
 ---
 
-## HU-14 — [Actualizar el estado como especialista externo]
+## HU-14 — Actualizar el estado como Especialista Externo
 
 | Campo | Detalle |
 |-------|---------|
+| Identificador | HU-14 |
 | Historia | Como Especialista Externo, quiero actualizar el estado de una incidencia que tengo asignada, para reflejar el avance de su atención. |
-| Módulo |Módulo 4 — Gestión y asignación de incidencias |
-| Requisitos relacionados |RF-12; CU-11|
+| Módulo | Módulo 4 — Gestión y asignación de incidencias |
+| Requisitos relacionados | RF-12, CU-11 |
 
 ### Criterios de aceptación
 
-1. El sistema deberá permitir al Especialista Externo modificar el estado únicamente de incidencias que tenga asignadas.
-2. El sistema deberá ofrecer los estados habilitados para este actor: En curso, Pendiente y Resuelto.
+1. El sistema deberá permitir al Especialista Externo modificar el estado únicamente de las incidencias que tenga asignadas.
+2. El sistema deberá ofrecer los estados habilitados para este actor: “En curso”, “Pendiente” y “Resuelto”.
 3. El sistema deberá permitir revisar el nuevo estado antes de guardar.
-4. Al confirmar, el sistema deberá actualizar el estado y registrar el cambio en el historial.
+4. Al confirmar, el sistema deberá actualizar el estado de la incidencia, registrar el cambio en el historial y notificar al Solicitante.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |Si |Es una acción del especialista distinta de la actualización realizada por Sistemas. |
-| Negociable |Si | El objetivo está definido; la interacción puede acordarse.|
-| Valiosa |Si |Permite reflejar directamente el avance de la atención externa. |
-| Estimable |Si |Se limita a incidencias asignadas y estados habilitados. |
-| Pequeña |Si | No incluye cambiar responsable ni prioridad.|
-| Verificable |Si | Se comprueban permisos, estados disponibles y registro del cambio.|
+| Independiente | Sí | Es una acción del Especialista Externo diferenciada de la actualización realizada por el Responsable de Sistemas. |
+| Negociable | Sí | El objetivo y los estados disponibles están definidos; los detalles de interacción pueden acordarse. |
+| Valiosa | Sí | Permite reflejar el avance de la atención externa e informar al Solicitante. |
+| Estimable | Sí | Se limita a incidencias asignadas, estados habilitados, registro del cambio y notificación. |
+| Pequeña | Sí | No incluye cambiar el responsable ni la prioridad de la incidencia. |
+| Verificable | Sí | Se pueden comprobar los permisos, los estados disponibles, el registro en el historial y la notificación al Solicitante. |
 
 ---
 
