@@ -154,7 +154,7 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Identificador | CU-05 |
 | Nombre | Actualizar estado de incidencia |
 | Descripción | Permite al Responsable de Sistemas actualizar el estado de una incidencia registrada de acuerdo con su evolución. |
-| Actores | Principal: Responsable de Sistemas / Secundario: Ninguno |
+| Actores | Principal: Responsable de Sistemas / Secundario: Solicitante |
 | Precondiciones | Debe existir al menos una incidencia registrada. |
 | Postcondiciones | Éxito: la incidencia queda actualizada con el nuevo estado y el Solicitante es informado del cambio. / Fallo: el estado de la incidencia no se modifica y el sistema informa el motivo. |
 
@@ -187,7 +187,7 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Identificador | CU-06 |
 | Nombre | Asignar o reasignar responsable |
 | Descripción | Permite al Responsable de Sistemas asignar o reasignar una incidencia a un responsable interno o a un Especialista Externo habilitado. |
-| Actores | Principal: Responsable de Sistemas / Secundario: Ninguno |
+| Actores | Principal: Responsable de Sistemas / Secundario: Solicitante |
 | Precondiciones | Debe existir al menos una incidencia registrada. |
 | Postcondiciones | Éxito: la incidencia queda asociada al responsable seleccionado y el Solicitante es informado del cambio de asignación. / Fallo: el responsable de la incidencia no se modifica y el sistema informa el motivo. |
 
