@@ -245,6 +245,7 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 |---|-----------|-----------------------|
 | E1 | El Responsable de Sistemas intenta confirmar el registro sin completar uno o más campos obligatorios. | El sistema informa cuáles son los campos que faltan completar e impide registrar al Especialista Externo. |
 | E2 | El Responsable de Sistemas ingresa un correo electrónico que ya se encuentra asociado a otro Especialista Externo registrado. | El sistema informa que el correo electrónico ya se encuentra registrado e impide confirmar un nuevo registro con el mismo correo. |
+| E3 | El Responsable de Sistemas revoca el acceso de un Especialista Externo que tiene incidencias abiertas asignadas. | El sistema revoca el acceso del especialista y evita que reciba nuevas asignaciones. Las incidencias abiertas quedan identificadas como pendientes de reasignación y disponibles para que el Responsable de Sistemas las reasigne. |
 
 | Campo | Detalle |
 |-------|---------|
@@ -318,6 +319,7 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
 | E1 | El Responsable de Sistemas intenta confirmar el registro sin completar la descripción. | El sistema informa que la descripción es obligatoria e impide registrar la información. |
+| E2 | El Responsable de Sistemas registra una resolución final sin que existan acciones previas en la incidencia. | El sistema permite continuar, valida que la descripción de la resolución esté completa, registra la resolución final y establece el estado “Cerrado”. |
 
 | Campo | Detalle |
 |-------|---------|
@@ -352,7 +354,8 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
-
+| E1 | El Responsable de Sistemas consulta el historial de una incidencia que todavía no tiene registros de gestión. | El sistema informa que aún no hay registros en el historial de la incidencia y mantiene disponible el detalle de esta. |
+| E2 | El sistema no puede recuperar el historial de la incidencia. | El sistema informa que el historial no está disponible en ese momento y permite intentar la consulta nuevamente.
 | Campo | Detalle |
 |-------|---------|
 | Rendimiento | La apertura del listado y la consulta del historial y sus registros deberán completarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
@@ -386,7 +389,8 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
-
+| E1 | Al guardar el nuevo estado, la incidencia ya no está asignada al Especialista Externo. | El sistema impide la actualización, informa que la asignación cambió y muestra los datos actuales de la incidencia. |
+| E2 | Otro usuario actualiza el estado después de que el Especialista Externo abrió la incidencia y antes de que guarde sus cambios. | El sistema detecta que el estado cambió, no sobrescribe la actualización previa e informa el estado actual para que el Especialista Externo vuelva a consultarlo. |
 | Campo | Detalle |
 |-------|---------|
 | Rendimiento | La actualización del estado deberá guardarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
