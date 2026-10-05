@@ -70,23 +70,23 @@ PERSONA ||--|| EMPLEADO
 PERSONA ||--|| ESPECIALISTA_EXTERNO 
 
 ' Relación de Especialista con Especialidad
-ESPECIALIDAD ||--o{ ESPECIALISTA_EXTERNO}
+ESPECIALIDAD ||--o{ ESPECIALISTA_EXTERNO
 
 ' Relación de muchos a muchos resuelta con tabla intermedia (Empleado - Rol)
-EMPLEADO ||--o{ EMPLEADO_ROL}
-ROL ||--o{ EMPLEADO_ROL}
+EMPLEADO ||--o{ EMPLEADO_ROL
+ROL ||--o{ EMPLEADO_ROL
 
 ' Relaciones principales de la Incidencia
-EMPLEADO ||--o{ INCIDENCIA} 
-ELEMENTO ||--o{ INCIDENCIA}
+EMPLEADO ||--o{ INCIDENCIA
+ELEMENTO ||--o{ INCIDENCIA
 
 ' Tablas dependientes de la Incidencia (transfieren el ID como FK)
-INCIDENCIA ||--o{ ADJUNTO}
-INCIDENCIA ||--o{ HISTORIAL}
-INCIDENCIA ||--o{ ASIGNACION}
+INCIDENCIA ||--o{ ADJUNTO
+INCIDENCIA ||--o{ HISTORIAL
+INCIDENCIA ||--o{ ASIGNACION
 
 ' Conexiones de Historial y Asignación con las personas involucradas
-PERSONA ||--o{ HISTORIAL}
-PERSONA ||--o{ ASIGNACION}
+PERSONA ||--o{ HISTORIAL
+PERSONA ||--o{ ASIGNACION
 
 @enduml
