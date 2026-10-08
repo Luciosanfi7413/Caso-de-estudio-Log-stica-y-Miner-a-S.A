@@ -6,9 +6,9 @@
 
 [Ver código PlantUML](../diagramas/casos-de-uso.puml)
 
-El sistema cuenta con tres actores: el **Solicitante**, que registra incidencias y consulta las propias; el **Responsable de Sistemas**, que consulta y gestiona incidencias, asigna prioridades y responsables, y consulta el historial; y el **Especialista Externo**, que consulta las incidencias asignadas, acepta o rechaza asignaciones, actualiza su estado y registra seguimientos. Un chofer participa como Solicitante, sin un rol funcional distinto.
+El sistema cuenta con tres actores: el **Solicitante**, que registra incidencias y consulta las propias; el **Responsable de Sistemas**, que consulta y gestiona incidencias, asigna prioridades y responsables, administra especialistas externos y consulta el historial; y el **Especialista Externo**, que consulta y gestiona las incidencias asignadas, actualiza su estado, registra información sobre su tratamiento e informa cuando no puede hacerse cargo de una incidencia. El Chofer participa con las mismas funciones que cualquier otro Solicitante, sin un rol funcional distinto.
 
-La opción **Adjuntar archivo** extiende el registro de una incidencia porque es opcional. El registro de la resolución final y el cierre extienden el seguimiento. Las notificaciones al Solicitante se incluyen al actualizar el estado, asignar un responsable o cerrar una incidencia.
+En el diagrama, CU-01 incluye la validación de los datos del registro y **Adjuntar imágenes** extiende opcionalmente CU-01. El registro de la resolución final y el cierre de la incidencia forman parte de CU-09; no se representan como un caso de uso independiente. Las notificaciones se describen en los flujos de los casos correspondientes y no como una relación `include` del diagrama.
 
 ---
 
@@ -52,12 +52,12 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Urgencia | Inmediata |
 ---
 
-## CU-02 — [Consultar Incidencias Registradas]
+## CU-02 — Consultar incidencias propias
 
 | Campo | Detalle |
 |-------|---------|
 | Identificador | CU-02 |
-| Nombre | Consulta de incidencia |
+| Nombre | Consultar incidencias propias |
 | Descripción | Permite al Solicitante consultar la información de una incidencia registrada y conocer su estado actual y responsable asignado. |
 | Actores | Principal: Solicitante (Empleado) / Secundario: Ninguno |
 | Precondiciones | Ninguna. |
@@ -84,7 +84,7 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Urgencia | Inmediata |
 
 ---
-## CU-03 — [Consultar Incidencia ]
+## CU-03 — Consultar incidencias registradas
 | Campo | Detalle |
 |-------|---------|
 | Identificador | CU-03 |
@@ -254,41 +254,38 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Urgencia | Vital |
 
 ---
-## CU-08 — Gestionar incidencia como Especialista Externo
+## CU-08 — Consultar incidencias asignadas
 
 | Campo | Detalle |
 |-------|---------|
 | Identificador | CU-08 |
-| Nombre | Gestionar incidencia como Especialista Externo |
-| Descripción | Permite al Especialista Externo consultar las incidencias que le fueron asignadas y registrar información relacionada con su tratamiento. |
+| Nombre | Consultar incidencias asignadas |
+| Descripción | Permite al Especialista Externo consultar las incidencias que tiene asignadas y acceder a la información necesaria para su atención. |
 | Actores | Principal: Especialista Externo / Secundario: Ninguno |
-| Precondiciones | El Especialista Externo debe encontrarse habilitado y tener al menos una incidencia asignada. |
-| Postcondiciones | Éxito: la información registrada queda incorporada al historial de la incidencia y disponible para su seguimiento, sin modificar su estado. / Fallo: la información no se incorpora y el sistema informa el motivo. |
+| Precondiciones | El Especialista Externo debe encontrarse habilitado. |
+| Postcondiciones | Éxito: la información de las incidencias asignadas queda disponible para su consulta sin modificar su estado ni sus datos. / Fallo: la información solicitada no se muestra y el sistema informa el motivo. |
 
 ### Secuencia normal
 
 | # | Acción (actor) | Reacción (sistema) |
 |---|----------------|--------------------|
 | 1 | El Especialista Externo accede a la funcionalidad de incidencias asignadas. | El sistema muestra únicamente las incidencias asignadas al Especialista Externo e informa para cada una su identificador, tipo de incidencia, elemento afectado, prioridad y estado actual. |
-| 2 | El Especialista Externo selecciona una de las incidencias disponibles. | El sistema muestra la información necesaria para su tratamiento, incluyendo identificador, tipo de incidencia, elemento afectado, identificador del elemento, descripción del problema, imágenes adjuntas, prioridad y estado actual. Además, presenta la opción “Registrar seguimiento”. |
-| 3 | El Especialista Externo selecciona la opción “Registrar seguimiento”. | El sistema presenta un formulario con los tipos de registro disponibles: “Avance”, “Diagnóstico”, “Acción realizada” y “Solución propuesta”, junto con un campo para ingresar la descripción correspondiente. |
-| 4 | El Especialista Externo selecciona uno de los tipos de registro disponibles. | El sistema registra la opción seleccionada y habilita el campo “Descripción”. |
-| 5 | El Especialista Externo completa la descripción con la información correspondiente al tratamiento de la incidencia. | El sistema muestra la información ingresada y la mantiene disponible para su confirmación. |
-| 6 | El Especialista Externo confirma el registro del seguimiento. | El sistema valida la información ingresada, incorpora el registro al historial de la incidencia indicando su tipo y registra al Especialista Externo como responsable de la información. El estado de la incidencia permanece sin cambios. |
+| 2 | El Especialista Externo selecciona una de las incidencias disponibles. | El sistema muestra el detalle de la incidencia, incluyendo identificador, tipo de incidencia, elemento afectado, identificador del elemento, descripción del problema, imágenes adjuntas, prioridad y estado actual. |
 
 ### Excepciones
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
-| E1 | El Especialista Externo intenta confirmar el seguimiento sin seleccionar un tipo de registro o sin completar la descripción. | El sistema informa cuáles son los datos obligatorios que faltan completar e impide registrar el seguimiento. |
-| E2 | Antes de confirmar el seguimiento, el Especialista Externo deja de estar habilitado o la incidencia deja de estar asignada a su responsabilidad. | El sistema impide registrar el seguimiento e informa que el acceso o la asignación ya no están vigentes. |
+| E1 | El Especialista Externo accede a la funcionalidad y no tiene incidencias asignadas. | El sistema informa que no existen incidencias asignadas para consultar. |
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento | La consulta de incidencias asignadas y el registro del seguimiento deberán completarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
-| Frecuencia | Cada vez que el Especialista Externo necesite consultar una incidencia asignada o registrar información sobre su tratamiento. |
+| Rendimiento | La apertura del listado y la consulta del detalle de una incidencia deberán completarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
+| Frecuencia | Cada vez que el Especialista Externo necesite consultar una incidencia asignada. |
 | Importancia | Importante |
 | Urgencia | Vital |
+
+---
 
 ## CU-09 — Registrar seguimiento y resolución de incidencia
 
@@ -398,40 +395,40 @@ La opción **Adjuntar archivo** extiende el registro de una incidencia porque es
 | Urgencia | Vital |
 
 ---
-## CU-12 — Registrar acción realizada sobre una incidencia
+## CU-12 — Registrar seguimiento de incidencia asignada
 
 | Campo | Detalle |
 |-------|---------|
 | Identificador | CU-12 |
-| Nombre | Registrar acción realizada sobre una incidencia |
-| Descripción | Permite al Especialista Externo registrar las acciones realizadas durante la gestión de una incidencia que tiene asignada. |
+| Nombre | Registrar seguimiento de incidencia asignada |
+| Descripción | Permite al Especialista Externo registrar avances, diagnósticos, acciones realizadas o la solución aplicada a una incidencia que tiene asignada. |
 | Actores | Principal: Especialista Externo / Secundario: Ninguno |
-| Precondiciones | El Especialista Externo debe tener una incidencia asignada. |
-| Postcondiciones | Éxito: la acción realizada queda registrada y asociada a la incidencia. / Fallo: la acción no se registra y el sistema informa el motivo. |
+| Precondiciones | El Especialista Externo debe encontrarse habilitado y tener asignada la incidencia. |
+| Postcondiciones | Éxito: la información queda registrada en el historial de la incidencia y asociada al Especialista Externo, sin modificar el estado de la incidencia. / Fallo: la información no se registra y el sistema informa el motivo. |
 
 ### Secuencia normal
 
 | # | Acción (actor) | Reacción (sistema) |
 |---|----------------|--------------------|
 | 1 | El Especialista Externo accede al detalle de una incidencia que tiene asignada. | El sistema muestra el detalle de la incidencia y presenta la opción “Registrar información”. |
-| 2 | El Especialista Externo selecciona la opción “Registrar información”. | El sistema presenta los tipos de registro disponibles para el Especialista Externo. |
-| 3 | El Especialista Externo selecciona el tipo de registro “Acción realizada”. | El sistema habilita el ingreso de la descripción de la acción realizada. |
-| 4 | El Especialista Externo ingresa la descripción de la acción realizada. | El sistema muestra la información ingresada y habilita la opción “Confirmar”. |
-| 5 | El Especialista Externo selecciona “Confirmar”. | El sistema registra la acción realizada, asociándola a la incidencia y al Especialista Externo que realizó el registro, e informa que la acción fue registrada correctamente. |
+| 2 | El Especialista Externo selecciona la opción “Registrar información”. | El sistema presenta los tipos disponibles: “Avance”, “Diagnóstico”, “Acción realizada” y “Solución aplicada”, junto con un campo para ingresar la descripción. |
+| 3 | El Especialista Externo selecciona un tipo de registro. | El sistema registra la selección y habilita el campo “Descripción”. |
+| 4 | El Especialista Externo ingresa la descripción correspondiente. | El sistema muestra la información ingresada y habilita la opción “Confirmar”. |
+| 5 | El Especialista Externo selecciona “Confirmar”. | El sistema valida los datos, registra la información en el historial asociada a la incidencia y al Especialista Externo, e informa que se guardó correctamente. El estado de la incidencia no cambia. |
 
 ### Excepciones
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
-| E1 | El Especialista Externo intenta confirmar el registro sin completar la descripción. | El sistema informa que la descripción es obligatoria e impide registrar la acción. |
+| E1 | El Especialista Externo intenta confirmar sin seleccionar un tipo de registro o sin completar la descripción. | El sistema informa qué dato obligatorio falta e impide registrar la información. |
+| E2 | Antes de confirmar, la incidencia deja de estar asignada al Especialista Externo o este deja de estar habilitado. | El sistema impide el registro e informa que la asignación o el acceso ya no están vigentes. |
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento | El registro de la acción deberá guardarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
-| Frecuencia | Cada vez que el Especialista Externo necesite registrar una acción realizada durante la gestión de una incidencia asignada. |
+| Rendimiento | El registro del seguimiento deberá completarse en un máximo de 3 segundos en al menos el 95 % de las operaciones, con hasta 50 usuarios conectados simultáneamente. |
+| Frecuencia | Cada vez que el Especialista Externo necesite registrar información sobre el tratamiento de una incidencia asignada. |
 | Importancia | Importante |
 | Urgencia | Vital |
-
 ---
 
 ## CU-13 — Informar imposibilidad de atender una incidencia asignada
