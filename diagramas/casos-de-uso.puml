@@ -1,29 +1,39 @@
 @startuml
+title Diagrama de casos de uso — Sistema de gestión de incidencias
+
 left to right direction
 skinparam packageStyle rectangle
+skinparam nodesep 100
 
 actor "Solicitante" as Solicitante
 actor "Responsable de Sistemas" as Sistemas
 actor "Especialista Externo" as Externo
 
 rectangle "Sistema de gestión de incidencias\nLogística y Minería S.A." {
-  usecase "CU-01\nRegistrar incidencia" as CU01
-  usecase "Adjuntar archivo" as Adjuntar
 
-  usecase "CU-02\nConsultar incidencias propias" as CU02
-  usecase "CU-03\nConsultar incidencias registradas" as CU03
-  usecase "CU-04\nAsignar prioridad" as CU04
-  usecase "CU-06\nAsignar o reasignar responsable" as CU06
-  usecase "CU-07\nGestionar especialistas externos" as CU07
-  usecase "CU-10\nConsultar historial" as CU10
+  package "Registro y consulta del Solicitante" {
+    usecase "CU-01\nRegistrar incidencia" as CU01
+    usecase "Validar datos del registro" as Validar
+    usecase "Adjuntar imágenes" as Adjuntar
+    usecase "CU-02\nConsultar incidencias propias" as CU02
+  }
 
-  usecase "CU-05 / CU-11\nActualizar estado" as CU05
-  usecase "CU-08\nConsultar incidencias asignadas" as CU08
-  usecase "CU-09 / CU-12\nRegistrar seguimiento" as CU09
-  usecase "Registrar resolución final\ny cerrar incidencia" as Cerrar
-  usecase "CU-13\nInformar imposibilidad de atender una incidencia" as CU13
+  package "Gestión del Responsable de Sistemas" {
+    usecase "CU-03\nConsultar incidencias registradas" as CU03
+    usecase "CU-04\nAsignar prioridad" as CU04
+    usecase "CU-05\nActualizar estado" as CU05
+    usecase "CU-06\nAsignar o reasignar responsable" as CU06
+    usecase "CU-07\nGestionar especialistas externos" as CU07
+    usecase "CU-09\nRegistrar seguimiento y resolución" as CU09
+    usecase "CU-10\nConsultar historial" as CU10
+  }
 
-  usecase "Notificar al Solicitante" as Notificar
+  package "Gestión del Especialista Externo" {
+    usecase "CU-08\nGestionar incidencia como\nEspecialista Externo" as CU08
+    usecase "CU-11\nActualizar estado de\nincidencia asignada" as CU11
+    usecase "CU-12\nRegistrar acción realizada" as CU12
+    usecase "CU-13\nInformar que no podrá atender\nuna incidencia asignada" as CU13
+  }
 }
 
 Solicitante -- CU01
@@ -36,19 +46,13 @@ Sistemas -- CU06
 Sistemas -- CU07
 Sistemas -- CU09
 Sistemas -- CU10
-Sistemas -- Cerrar
-Sistemas -- CU13
 
-Externo -- CU05
 Externo -- CU08
-Externo -- CU09
+Externo -- CU11
+Externo -- CU12
 Externo -- CU13
 
+CU01 ........> Validar : <<include>>
 Adjuntar ..> CU01 : <<extend>>
-
-CU05 ..> Notificar : <<include>>
-CU06 ..> Notificar : <<include>>
-Cerrar ..> Notificar : <<include>>
-Cerrar ..> CU09 : <<extend>>
 
 @enduml
