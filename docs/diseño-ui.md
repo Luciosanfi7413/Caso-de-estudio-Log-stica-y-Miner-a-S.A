@@ -76,9 +76,9 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 **Justificación:** La prioridad se asigna desde los datos de una incidencia concreta, por eso el formulario presenta su identificador y la información necesaria para reconocerla. El desplegable permite elegir entre valores definidos y evita diferencias de escritura. Las acciones Guardar cambios y Cancelar dejan claro cómo confirmar o descartar la operación.
 
 **Formulario (si aplica):**
-- Campos relevantes: urgencia, impacto y prioridad. Estado y responsable se muestran como información de la incidencia, sin modificarlos en este caso.
-- Flujo: en una pantalla; el Responsable de Sistemas selecciona los valores y luego guarda o cancela los cambios.
-- Validaciones relevantes: se deben completar los valores obligatorios antes de guardar.
+- Campos relevantes: identificador de la incidencia, prioridad actual (si posee una) y prioridad seleccionada.
+- Flujo: en una pantalla, el Responsable de Sistemas selecciona una prioridad —Baja, Media, Alta o Vital— y luego guarda o cancela.
+- Validaciones relevantes: se debe seleccionar una prioridad antes de guardar.
 
 ### Pantalla / Módulo 2 — CU-04 — Desplegar las opciones de prioridad
 
@@ -89,8 +89,9 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 **Justificación:** Presentar las opciones disponibles —Baja, Media, Alta y Vital— ayuda a que el Responsable de Sistemas use los niveles definidos por el sistema y reduce errores al asignar la prioridad.
 
 **Formulario (si aplica):**
-- Campos relevantes: prioridad; también deberían figurar urgencia e impacto, de acuerdo con la descripción del caso.
-- Flujo: el usuario abre el selector y elige una opción.
+- Campo relevante: prioridad.
+- Opciones disponibles: Baja, Media, Alta y Vital.
+- Flujo: el Responsable de Sistemas abre el selector y elige una opción.
 - Validaciones relevantes: se debe seleccionar una prioridad antes de confirmar.
 
 ### Pantalla / Módulo 3 — CU-04 — Revisar la prioridad seleccionada
@@ -102,9 +103,9 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 **Justificación:** Mostrar la prioridad elegida antes de guardar permite revisar la decisión y corregirla si hace falta. Las opciones Guardar cambios y Cancelar hacen explícito que la selección todavía puede confirmarse o descartarse.
 
 **Formulario (si aplica):**
-- Campos relevantes: urgencia, impacto y prioridad seleccionados.
-- Flujo: el Responsable de Sistemas revisa los valores y confirma o cancela.
-- Validaciones relevantes: no se debe guardar si falta alguno de los valores obligatorios.
+- Campo relevante: prioridad seleccionada.
+- Flujo: el Responsable de Sistemas revisa la prioridad y confirma o cancela la operación.
+- Validaciones relevantes: no se debe guardar si no se seleccionó una prioridad.
 
 ### Pantalla / Módulo 4 — CU-04 — Consultar la incidencia con la prioridad asignada
 
