@@ -261,7 +261,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 | Negociable |Si | El contenido mínimo está definido; la presentación puede acordarse.|
 | Valiosa |Si |Aporta antecedentes para analizar incidencias similares.|
 | Estimable |Si |Se delimitan la consulta, el orden y el detalle de registros. |
-| Pequeña |Si | La conservación por dos años puede involucrar decisiones técnicas adicionales.|
+| Pequeña | Sí | La historia se limita a consultar y mostrar el historial de una incidencia. La conservación durante dos años está definida en RNF-04 y se verifica mediante el criterio de aceptación 4. |
 | Verificable |Si | Se comprueba el orden, los datos visibles, el detalle y la retención indicada.|
 
 ---
