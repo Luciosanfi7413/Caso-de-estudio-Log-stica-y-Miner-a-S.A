@@ -27,7 +27,7 @@
 
 1. El sistema deberá permitir informar el tipo de incidencia, el elemento afectado, su identificador y la descripción del problema.
 2. El sistema deberá permitir adjuntar una o más imágenes relacionadas con la incidencia.
-3. 3. El sistema deberá validar que los campos obligatorios estén completos, que el elemento afectado esté registrado y que no tenga otra incidencia cuyo estado sea distinto de “Cerrado”. Si alguna validación falla, deberá impedir el registro e informar el motivo.
+3. El sistema deberá validar que los campos obligatorios estén completos, que el elemento afectado esté registrado y que no tenga otra incidencia cuyo estado sea distinto de “Cerrado”. Si alguna validación falla, deberá impedir el registro e informar el motivo.
 4. Al confirmar un registro válido, el sistema deberá asociar la incidencia al Solicitante, asignarle un identificador único y establecer su estado inicial como Nuevo.
 5. Si un dato obligatorio o un archivo no cumple las condiciones definidas, el sistema deberá explicar el error y conservar los demás datos ingresados.
 6. El sistema deberá permitir adjuntar imágenes en formato PNG o JPEG, con un tamaño máximo de 15 MB por archivo.
