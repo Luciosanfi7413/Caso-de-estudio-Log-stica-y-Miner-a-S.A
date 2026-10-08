@@ -1,92 +1,128 @@
 @startuml
+title Modelo Entidad-Relación - Sistema de gestión de incidencias\nLogística y Minería S.A.
 
-title Modelo Entidad-Relación - [Log-stica-y-Miner]
-' Configuración visual del diagrama
 hide circle
 skinparam linetype ortho
-skinparam EntityBackgroundColor #F9F9F9
+top to bottom direction
 
-' --- Entidades y Atributos ---
-
-entity "PERSONA" {
-  * id_persona : PK
-}
-
-entity "EMPLEADO" {
-  * id_persona : PK, FK
-}
-
-entity "ESPECIALISTA_EXTERNO" {
-  * id_persona : PK, FK
+entity "PERSONA" as PERSONA {
+  * id_persona : BIGINT <<PK>>
   --
-  id_especialidad : FK
+  dni : VARCHAR(20) <<UQ>>
+  nombre : VARCHAR(100)
+  apellido : VARCHAR(100)
+  correo : VARCHAR(254)
 }
 
-entity "ROL" {
-  * id_rol : PK
+entity "EMPLEADO" as EMPLEADO {
+  * id_persona : BIGINT <<PK, FK>>
 }
 
-entity "EMPLEADO_ROL" {
-  * id_persona : PK, FK
-  * id_rol : PK, FK
-}
-
-entity "ESPECIALIDAD" {
-  * id_especialidad : PK
-}
-
-entity "INCIDENCIA" {
-  * id_incidencia : PK
+entity "ESPECIALISTA_EXTERNO" as ESPECIALISTA {
+  * id_persona : BIGINT <<PK, FK>>
   --
-  id_empleado_solicitante : FK
-  elemento_identificador : FK
+  telefono : VARCHAR(30)
+  estado_habilitacion : VARCHAR(20)
 }
 
-entity "ELEMENTO" {
-  * identificador_elemento : PK
-}
-
-entity "ADJUNTO" {
+entity "ROL" as ROL {
+  * id_rol : INT <<PK>>
   --
-  id_incidencia : FK
+  nombre : VARCHAR(50) <<UQ>>
 }
 
-entity "HISTORIAL" {
+entity "EMPLEADO_ROL" as EMPLEADO_ROL {
+  * id_persona : BIGINT <<PK, FK>>
+  * id_rol : INT <<PK, FK>>
+}
+
+entity "ESPECIALIDAD" as ESPECIALIDAD {
+  * id_especialidad : BIGINT <<PK>>
   --
-  id_incidencia : FK
-  id_persona : FK
+  nombre : VARCHAR(100) <<UQ>>
+  descripcion : VARCHAR(255)
 }
 
-entity "ASIGNACION" {
+entity "ESPECIALISTA_ESPECIALIDAD" as ESPECIALISTA_ESPECIALIDAD {
+  * id_persona : BIGINT <<PK, FK>>
+  * id_especialidad : BIGINT <<PK, FK>>
+}
+
+entity "ELEMENTO" as ELEMENTO {
+  * identificador_elemento : VARCHAR(100) <<PK>>
   --
-  id_incidencia : FK
-  id_persona_asignada : FK
+  tipo_elemento : VARCHAR(40)
+  descripcion : VARCHAR(255)
 }
 
-' --- Relaciones ---
+entity "INCIDENCIA" as INCIDENCIA {
+  * id_incidencia : BIGINT <<PK>>
+  --
+  id_empleado_solicitante : BIGINT <<FK>>
+  elemento_identificador : VARCHAR(100) <<FK>>
+  fecha_hora_creacion : TIMESTAMP
+  tipo_incidencia : VARCHAR(30)
+  descripcion : TEXT
+  prioridad : VARCHAR(10)
+  estado_actual : VARCHAR(20)
+  fecha_hora_actualizacion : TIMESTAMP
+  fecha_hora_cierre : TIMESTAMP <<NULL>>
+}
 
-' Herencia de Persona (1 a 1)
-PERSONA ||--|| EMPLEADO 
-PERSONA ||--|| ESPECIALISTA_EXTERNO 
+entity "ADJUNTO" as ADJUNTO {
+  * id_adjunto : BIGINT <<PK>>
+  --
+  id_incidencia : BIGINT <<FK>>
+  nombre_archivo : VARCHAR(255)
+  tipo_archivo : VARCHAR(10)
+  tamano_bytes : BIGINT
+  ubicacion : VARCHAR(500)
+}
 
-' Relación de Especialista con Especialidad
-ESPECIALIDAD ||--o{ ESPECIALISTA_EXTERNO
+entity "HISTORIAL" as HISTORIAL {
+  * id_historial : BIGINT <<PK>>
+  --
+  id_incidencia : BIGINT <<FK>>
+  id_persona : BIGINT <<FK>>
+  fecha_hora : TIMESTAMP
+  tipo_evento : VARCHAR(40)
+  descripcion : TEXT
+}
 
-' Relación de muchos a muchos resuelta con tabla intermedia (Empleado - Rol)
-EMPLEADO ||--o{ EMPLEADO_ROL
-ROL ||--o{ EMPLEADO_ROL
+entity "ASIGNACION" as ASIGNACION {
+  * id_asignacion : BIGINT <<PK>>
+  --
+  id_incidencia : BIGINT <<FK>>
+  id_persona_asignada : BIGINT <<FK>>
+  fecha_hora_asignacion : TIMESTAMP
+  fecha_hora_fin : TIMESTAMP <<NULL>>
+  estado_asignacion : VARCHAR(30)
+}
 
-' Relaciones principales de la Incidencia
-EMPLEADO ||--o{ INCIDENCIA
-ELEMENTO ||--o{ INCIDENCIA
+PERSONA ||--o| EMPLEADO : "es"
+PERSONA ||--o| ESPECIALISTA : "es"
 
-' Tablas dependientes de la Incidencia (transfieren el ID como FK)
-INCIDENCIA ||--o{ ADJUNTO
-INCIDENCIA ||--o{ HISTORIAL
-INCIDENCIA ||--o{ ASIGNACION
+EMPLEADO ||--o{ EMPLEADO_ROL : "tiene"
+ROL ||--o{ EMPLEADO_ROL : "se asigna"
 
-' Conexiones de Historial y Asignación con las personas involucradas
-PERSONA ||--o{ HISTORIAL
-PERSONA ||--o{ ASIGNACION
+ESPECIALISTA ||--o{ ESPECIALISTA_ESPECIALIDAD : "posee"
+ESPECIALIDAD ||--o{ ESPECIALISTA_ESPECIALIDAD : "corresponde a"
+
+EMPLEADO ||--o{ INCIDENCIA : "registra"
+ELEMENTO ||--o{ INCIDENCIA : "es afectado en"
+
+INCIDENCIA ||--o{ ADJUNTO : "incluye"
+INCIDENCIA ||--o{ HISTORIAL : "conserva"
+PERSONA ||--o{ HISTORIAL : "realiza"
+
+INCIDENCIA ||--o{ ASIGNACION : "registra"
+PERSONA ||--o{ ASIGNACION : "es asignada a"
+
+note right of ASIGNACION
+Cada asignación o reasignación
+se conserva como un registro.
+El Responsable de Sistemas realiza
+manualmente las reasignaciones.
+end note
 
 @enduml

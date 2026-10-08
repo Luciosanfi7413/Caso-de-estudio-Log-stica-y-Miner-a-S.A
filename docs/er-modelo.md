@@ -2,96 +2,130 @@
 
 ## Diagrama
 
-![Diagrama general de casos de uso](../diagramas/ER-Model.png)
+![Modelo Entidad-Relación del sistema de gestión de incidencias](../diagramas/ER-Model.png)
+
 [Ver código PlantUML](../diagramas/er.puml)
 
 ## Entidades
 
-| Entidad                  | Descripción                                                                                               | Relaciones clave                                                                                                                                                                                           |
-|--------------------------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **PERSONA**              | Tabla principal que almacena los datos básicos. Su clave primaria (PK) es `id_persona`.          | Es la tabla "padre". Su PK es utilizada como clave foránea (FK) en `EMPLEADO` y `ESPECIALISTA_EXTERNO`.                                                                                           |
-| **EMPLEADO**             | Tabla que representa al empleado, heredando de `PERSONA`.                                        | Su `id_persona` actúa como PK y FK al mismo tiempo. Se relaciona con `ROL` mediante la tabla intermedia `EMPLEADO_ROL` y con `INCIDENCIA` como solicitante.                              |
-| **ESPECIALISTA_EXTERNO** | Tabla que representa al técnico externo, heredando de `PERSONA`.                                 | Su `id_persona` es PK y FK[cite: 3]. Posee una clave foránea (`id_especialidad`) que lo conecta directamente con `ESPECIALIDAD`.                                                                  |
-| **ROL**                  | Catálogo de roles del sistema. Su PK es `id_rol`.                                                | Se vincula a los empleados a través de la tabla `EMPLEADO_ROL`.                                                                                                                                   |
-| **EMPLEADO_ROL**         | Tabla intermedia para resolver la relación de muchos a muchos entre empleados y roles.           | Su clave primaria compuesta está formada por dos claves foráneas: `id_persona` e `id_rol`.                                                                                                        |
-| **ESPECIALIDAD**         | Catálogo de especialidades. Su PK es `id_especialidad`.                                          | Es referenciada mediante una clave foránea (FK) desde la tabla `ESPECIALISTA_EXTERNO`.                                                                                                            |
-| **INCIDENCIA**           | Tabla central del sistema. Su PK es `id_incidencia`.                                             | Posee claves foráneas hacia `EMPLEADO` (`id_empleado_solicitante`) y `ELEMENTO` (`elemento_identificador`). Su ID se transfiere como FK a `ASIGNACION`, `ADJUNTO` e `HISTORIAL`.           |
-| **ELEMENTO**             | Catálogo de elementos que pueden fallar. Su PK es `identificador_elemento`.                      | Es referenciada directamente por la tabla `INCIDENCIA` mediante una FK.                                                                                                                           |
-| **ADJUNTO**              | Almacena los archivos del reporte.                                                               | Se vincula a una incidencia específica mediante la clave foránea `id_incidencia`.                                                                                                                 |
-| **HISTORIAL**            | Tabla de registro de eventos.                                                                    | Se vincula a una incidencia mediante `id_incidencia` (FK) y a la persona involucrada mediante `id_persona` (FK).                                                                                  |
-| **ASIGNACION**           | Tabla que registra la derivación del problema (en el diagrama original dice ASGINACION).         | Contiene claves foráneas que la vinculan a la incidencia (`id_incidencia`) y a la persona encargada (`id_persona_asignada`).                                                                      |
-
+| Entidad | Descripción | Relaciones clave |
+|---------|-------------|------------------|
+| PERSONA | Almacena los datos básicos de las personas registradas en el sistema. | Es la entidad principal de EMPLEADO y ESPECIALISTA_EXTERNO. |
+| EMPLEADO | Representa a una persona que trabaja en la empresa. | Su `id_persona` es PK y FK a PERSONA. Se relaciona con ROL mediante EMPLEADO_ROL y puede registrar incidencias. |
+| ESPECIALISTA_EXTERNO | Representa a una persona que presta servicios externos. | Su `id_persona` es PK y FK a PERSONA. Se relaciona con ESPECIALIDAD mediante ESPECIALISTA_ESPECIALIDAD. |
+| ROL | Catálogo de roles habilitados en el sistema. | Se relaciona con EMPLEADO mediante EMPLEADO_ROL. |
+| EMPLEADO_ROL | Resuelve la relación de muchos a muchos entre EMPLEADO y ROL. | Tiene una PK compuesta por `id_persona` e `id_rol`; ambos campos son también FK. |
+| ESPECIALIDAD | Catálogo de especialidades técnicas. | Se relaciona con ESPECIALISTA_EXTERNO mediante ESPECIALISTA_ESPECIALIDAD. |
+| ESPECIALISTA_ESPECIALIDAD | Resuelve la relación de muchos a muchos entre ESPECIALISTA_EXTERNO y ESPECIALIDAD. | Tiene una PK compuesta por `id_persona` e `id_especialidad`; ambos campos son también FK. |
+| ELEMENTO | Catálogo de equipos, dispositivos, vehículos o aplicaciones que pueden asociarse a una incidencia. | Puede estar relacionado con varias incidencias a lo largo del tiempo. |
+| INCIDENCIA | Registra el problema o solicitud desde su creación hasta su cierre. | Se relaciona con el EMPLEADO solicitante, el ELEMENTO afectado, sus adjuntos, el historial y las asignaciones. |
+| ADJUNTO | Almacena la referencia a una imagen asociada a una incidencia. | Pertenece a una INCIDENCIA. |
+| HISTORIAL | Registra los eventos y las intervenciones vinculados a una incidencia. | Se relaciona con una INCIDENCIA y con la PERSONA que realizó la acción. |
+| ASIGNACION | Registra las asignaciones y reasignaciones de una incidencia. | Se relaciona con una INCIDENCIA y con la PERSONA asignada. |
 
 ## Descripción de atributos principales
 
+Los tipos de datos indicados son genéricos y no dependen de un motor de base de datos específico.
+
 ### PERSONA
-- `id_persona` (PK): Identificador único de cada persona registrada en el sistema.
-- `dni` (UQ): Documento Nacional de Identidad, debe ser un valor único.
-- `nombre`: Nombre de la persona.
-- `apellido`: Apellido de la persona.
-- `correo`: Dirección de correo electrónico de contacto.
+
+- `id_persona` (BIGINT, PK): identificador único de la persona.
+- `dni` (VARCHAR(20), UQ): documento de identidad; no se puede repetir.
+- `nombre` (VARCHAR(100)): nombre de la persona.
+- `apellido` (VARCHAR(100)): apellido de la persona.
+- `correo` (VARCHAR(254)): correo electrónico de contacto.
 
 ### EMPLEADO
-- `id_persona` (PK, FK): Identificador que hereda de la entidad PERSONA, actuando como clave primaria y foránea.
+
+- `id_persona` (BIGINT, PK y FK): identifica al empleado y lo vincula con PERSONA.
 
 ### ESPECIALISTA_EXTERNO
-- `id_persona` (PK, FK): Identificador que hereda de la entidad PERSONA.
-- `id_especialidad` (FK): Referencia a la especialidad técnica del profesional.
-- `telefono`: Número de contacto del especialista.
-- `estado_habilitacion`: Indica si el técnico está activo o habilitado para operar.
+
+- `id_persona` (BIGINT, PK y FK): identifica al especialista y lo vincula con PERSONA.
+- `telefono` (VARCHAR(30)): número de contacto del especialista.
+- `estado_habilitacion` (VARCHAR(20)): indica si el especialista está Habilitado o Revocado.
 
 ### ROL
-- `id_rol` (PK): Identificador único del rol en el sistema.
-- `nombre` (UQ): Denominación del perfil o cargo, el cual no puede repetirse.
+
+- `id_rol` (INT, PK): identificador único del rol.
+- `nombre` (VARCHAR(50), UQ): nombre del rol, que no se puede repetir.
 
 ### EMPLEADO_ROL
-- `id_persona` (PK, FK): Referencia al empleado al que se le asigna el rol.
-- `id_rol` (PK, FK): Referencia al rol asignado al empleado.
+
+- `id_persona` (BIGINT, PK y FK): empleado al que se le asigna el rol.
+- `id_rol` (INT, PK y FK): rol asignado al empleado.
+
+La PK es compuesta por `id_persona` e `id_rol`.
 
 ### ESPECIALIDAD
-- `id_especialidad` (PK): Identificador único de la especialidad técnica.
 
-### INCIDENCIA
-- `id_incidencia` (PK): Identificador único del ticket o reporte de incidencia.
-- `id_empleado_solicitante` (FK): Referencia al empleado que registró el reporte.
-- `elemento_identificador` (FK): Referencia al elemento u objeto afectado por la falla.
-- `fecha_hora_creacion`: Sello de tiempo del momento exacto del reporte.
-- `tipo_incidencia`: Categorización general del problema reportado.
-- `descripcion`: Detalle textual de la falla reportada.
-- `prioridad`: Nivel de urgencia asignado para su resolución.
-- `estado_actual`: Situación en la que se encuentra el ciclo de vida de la incidencia.
+- `id_especialidad` (BIGINT, PK): identificador único de la especialidad.
+- `nombre` (VARCHAR(100), UQ): nombre de la especialidad.
+- `descripcion` (VARCHAR(255)): descripción breve de la especialidad.
+
+### ESPECIALISTA_ESPECIALIDAD
+
+- `id_persona` (BIGINT, PK y FK): especialista vinculado.
+- `id_especialidad` (BIGINT, PK y FK): especialidad asignada.
+
+La PK es compuesta por `id_persona` e `id_especialidad`.
 
 ### ELEMENTO
-- `identificador_elemento` (PK): Código o ID único del componente, equipo o servicio afectado.
-- `tipo_elemento`: Clasificación o categoría del elemento.
-- `descripcion`: Nombre o detalles técnicos del elemento.
+
+- `identificador_elemento` (VARCHAR(100), PK): identificador del equipo, dispositivo, vehículo o aplicación.
+- `tipo_elemento` (VARCHAR(40)): tipo de elemento; por ejemplo, equipo informático, dispositivo móvil, vehículo o software/aplicación.
+- `descripcion` (VARCHAR(255)): descripción o nombre del elemento.
+
+### INCIDENCIA
+
+- `id_incidencia` (BIGINT, PK): identificador único de la incidencia.
+- `id_empleado_solicitante` (BIGINT, FK a EMPLEADO): empleado que registró la incidencia.
+- `elemento_identificador` (VARCHAR(100), FK a ELEMENTO): elemento afectado.
+- `fecha_hora_creacion` (TIMESTAMP): fecha y hora de registro.
+- `tipo_incidencia` (VARCHAR(30)): falla técnica o solicitud técnica.
+- `descripcion` (TEXT): detalle del problema o necesidad.
+- `prioridad` (VARCHAR(10)): prioridad seleccionada; Baja, Media, Alta o Vital.
+- `estado_actual` (VARCHAR(20)): estado vigente: Nuevo, En curso, Pendiente, Resuelto o Cerrado.
+- `fecha_hora_actualizacion` (TIMESTAMP): fecha y hora de la última actualización.
+- `fecha_hora_cierre` (TIMESTAMP, NULL): fecha y hora de cierre; queda vacía mientras la incidencia no esté cerrada.
 
 ### ADJUNTO
-- `id_adjunto` (PK): Identificador único del archivo subido.
-- `id_incidencia` (FK): Referencia a la incidencia a la que pertenece el documento o imagen.
-- `nombre_archivo`: Nombre del archivo original.
-- `tipo_archivo`: Extensión o formato (ej. jpg, pdf).
-- `ubicacion`: Ruta de almacenamiento o enlace de acceso al archivo.
+
+- `id_adjunto` (BIGINT, PK): identificador único del archivo.
+- `id_incidencia` (BIGINT, FK a INCIDENCIA): incidencia a la que pertenece la imagen.
+- `nombre_archivo` (VARCHAR(255)): nombre del archivo.
+- `tipo_archivo` (VARCHAR(10)): formato de la imagen; PNG o JPEG.
+- `tamano_bytes` (BIGINT): tamaño del archivo en bytes; no debe superar los 15 MB.
+- `ubicacion` (VARCHAR(500)): ruta o referencia para recuperar la imagen.
 
 ### HISTORIAL
-- `id_historial` (PK): Identificador único del registro de evento.
-- `id_incidencia` (FK): Referencia a la incidencia que sufrió un cambio o actualización.
-- `id_persona` (FK): Referencia al usuario que ejecutó la acción.
-- `fecha_hora`: Momento exacto en que ocurrió el evento.
-- `tipo_evento`: Clasificación de la acción (ej. cambio de estado, comentario).
-- `descripcion`: Notas o justificación del cambio realizado.
+
+- `id_historial` (BIGINT, PK): identificador único del evento.
+- `id_incidencia` (BIGINT, FK a INCIDENCIA): incidencia relacionada con el evento.
+- `id_persona` (BIGINT, FK a PERSONA): persona que realizó la acción.
+- `fecha_hora` (TIMESTAMP): momento en que ocurrió el evento.
+- `tipo_evento` (VARCHAR(40)): tipo de evento; por ejemplo, cambio de estado, asignación, aviso de imposibilidad de atención, acción realizada, diagnóstico, avance, solución propuesta o resolución final.
+- `descripcion` (TEXT): detalle del evento o de la intervención.
 
 ### ASIGNACION
-- `id_asignacion` (PK): Identificador único de la tarea o derivación.
-- `id_incidencia` (FK): Referencia a la incidencia que debe ser resuelta.
-- `id_persona_asignada` (FK): Referencia a la persona encargada de solucionar el problema.
-- `fecha_hora`: Momento en que se asignó la tarea.
-- `estado_asignacion`: Situación de la tarea (ej. pendiente, en progreso).
-- `motivo_rechazo`: Justificación en caso de que la persona asignada no acepte la tarea.
+
+- `id_asignacion` (BIGINT, PK): identificador único de la asignación.
+- `id_incidencia` (BIGINT, FK a INCIDENCIA): incidencia asignada.
+- `id_persona_asignada` (BIGINT, FK a PERSONA): persona responsable de atenderla.
+- `fecha_hora_asignacion` (TIMESTAMP): momento en que se realizó la asignación.
+- `fecha_hora_fin` (TIMESTAMP, NULL): momento en que finalizó esa asignación; queda vacío mientras siga vigente.
+- `estado_asignacion` (VARCHAR(30)): estado de la asignación: Vigente, Pendiente de reasignación o Finalizada.
 
 ## Decisiones de diseño
 
-### Decisión 1 — [Transformación de "Especialidad" en entidad independiente]
-Inicialmente, se consideró modelar la especialidad simplemente como un atributo dentro de la entidad ESPECIALISTA_EXTERNO. Esta alternativa se descartó porque limitaba a cada especialista externo a poseer una sola especialidad. En su lugar, se decidió que ESPECIALIDAD sea una entidad en sí misma, estableciendo una relación de muchos a muchos (N a N) con ESPECIALISTA_EXTERNO. Esta decisión de diseño permite que un mismo especialista pueda tener más de una especialidad asociada en el sistema.
-### Decisión 2 — [Eliminación de atributos redundantes en "Incidencia"Título]
-En una primera versión del diagrama, se habían incluido los atributos de fecha de resolución y descripción de resolución directamente en la entidad INCIDENCIA. Se descartó mantenerlos allí al detectar que se estaban duplicando datos que ya estaban presentes en la entidad HISTORIAL. Por lo tanto, se tomó la decisión de sacar esos atributos de INCIDENCIA y dejarlos exclusivamente en HISTORIAL, evitando así la redundancia de información en la base de datos.
+### Decisión 1 — Permitir varias especialidades por especialista externo
+
+Un Especialista Externo puede tener varias especialidades, y una misma especialidad puede corresponder a varios especialistas. Por eso, la relación entre ESPECIALISTA_EXTERNO y ESPECIALIDAD es muchos a muchos y se resuelve mediante ESPECIALISTA_ESPECIALIDAD. Su clave primaria compuesta por `id_persona` e `id_especialidad` evita repetir la misma asociación. Se descarta guardar una sola `id_especialidad` en ESPECIALISTA_EXTERNO porque limitaría cada especialista a una especialidad.
+
+### Decisión 2 — Registrar los eventos de la incidencia en HISTORIAL
+
+HISTORIAL conserva los cambios y las intervenciones realizadas durante la gestión, incluyendo quién actuó y cuándo. La INCIDENCIA mantiene su `estado_actual` para consultar rápidamente el estado vigente. La resolución final también se registra en HISTORIAL, evitando duplicar su descripción en INCIDENCIA.
+
+### Decisión 3 — Conservar las asignaciones y permitir la reasignación manual
+
+Cada asignación o reasignación genera un registro en ASIGNACION. Si un Especialista Externo informa que no puede atender una incidencia, la asignación queda marcada como Pendiente de reasignación. El sistema no elige automáticamente a otro responsable; el Responsable de Sistemas realiza la reasignación. Se conserva el historial de asignaciones para saber quién estuvo a cargo en cada período.
