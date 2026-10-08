@@ -281,7 +281,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 2. El sistema deberá mostrar la prioridad actual de la incidencia, si posee una, y las opciones disponibles: Baja, Media, Alta y Vital.
 3. El sistema deberá permitir seleccionar una prioridad y mostrarla antes de confirmar la operación.
 4. Al confirmar, el sistema deberá guardar la prioridad seleccionada y mostrar una confirmación de la operación realizada.
-5. Si no se selecciona una prioridad, el sistema deberá impedir la confirmación e indicar que debe seleccionarse una opción.
+5. Si no se selecciona una prioridad, el sistema deberá mantener deshabilitado el botón “Guardar”, indicar que debe seleccionarse una opción y no modificar la incidencia.
 
 ### Validación INVEST
 
