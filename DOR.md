@@ -29,11 +29,11 @@ _Elegir TRES historias de usuario del trabajo del primer semestre y pasarlas por
 |-------------------------|--------|-----------------------------|
 | 1 | Sí | Los criterios permiten comprobar el inicio de sesión con credenciales válidas, el acceso según perfil y el rechazo de credenciales inválidas. Evidencia: HU-01, criterios 1 a 3. |
 | 2 | Sí | El acceso con credenciales individuales y las funciones habilitadas según el perfil son consistentes con RF-01. |
-| 3 | Sí | La necesidad de autenticar usuarios autorizados y habilitar funciones según su perfil fue validada durante el relevamiento; consta en la minuta del equipo. |
+| 3 | No | El repositorio no incluye una minuta ni otra evidencia que permita comprobar la validación del stakeholder. |
 | 4 | Sí | La historia expresa el beneficio para el usuario: acceder a las funciones habilitadas para su perfil. |
 | 5 | Sí | La historia tiene un alcance delimitado a la autenticación y al acceso según perfil; puede desarrollarse y probarse como una capacidad independiente. |
-| 6 | Sí | Se definieron pruebas con credenciales válidas e inválidas para los perfiles Solicitante, Responsable de Sistemas y Especialista Externo habilitado, verificando el acceso y las funciones disponibles para cada perfil. |
-| 7 | Sí | El equipo estimó HU-01 en 3 puntos con la escala Fibonacci. La planificación de las tres historias suma 14 puntos, dentro de la capacidad de referencia de 16 puntos para el sprint. |
+| 6 | No | No hay casos de prueba documentados ni evidencia de cuentas disponibles con credenciales válidas e inválidas para los distintos perfiles. |
+| 7 | No | La estimación de 3 puntos para HU-01 y la capacidad de referencia de 16 puntos solo aparecen en este DOR; no hay un archivo de planificación del sprint que las respalde. |
 | 8 | Sí | HU-01 contempla el flujo alternativo de credenciales inválidas: impide el acceso e informa que no se pudo iniciar sesión. Evidencia: criterio de aceptación 3. |
 | 9 | Sí | RNF-01 establece que las credenciales deben transmitirse mediante HTTPS con TLS 1.2 o superior, un requisito de seguridad aplicable al inicio de sesión. |
 
@@ -45,11 +45,11 @@ _Elegir TRES historias de usuario del trabajo del primer semestre y pasarlas por
 |-------------------------|--------|--------------------------|
 | 1 | Sí | HU-04 define los datos del registro y las condiciones de validación de campos, elemento afectado y archivos. Evidencia: criterios de aceptación de HU-04. |
 | 2 | Sí | Las reglas de registro y adjuntos son consistentes con RF-04, RF-06 y CU-01. |
-| 3 | Sí | El stakeholder validó la necesidad y las reglas del registro durante el relevamiento; consta en la minuta del equipo. |
+| 3 | No | El repositorio no incluye una minuta ni otra evidencia que permita comprobar la validación del stakeholder. |
 | 4 | Sí | HU-04 identifica el beneficio: que Sistemas reciba la información necesaria para gestionar la falla o solicitud técnica. |
 | 5 | Sí | HU-04 valida el identificador contra el registro de elementos existentes. La administración de ese registro no forma parte de esta historia ni la condiciona. |
-| 6 | Sí | Se definieron pruebas con elementos registrados sin incidencias abiertas, elementos con incidencias abiertas e identificadores inexistentes. Para los adjuntos se probarán imágenes PNG y JPEG de hasta 15 MB, formatos no permitidos y archivos que superen el límite. |
-| 7 | Sí | El equipo estimó HU-04 en 8 puntos con la escala Fibonacci. La planificación de las tres historias suma 14 puntos, dentro de la capacidad de referencia de 16 puntos para el sprint. |
+| 6 | No | Los escenarios de prueba se mencionan en este DOR, pero el repositorio no incluye casos de prueba documentados ni datos preparados para comprobarlos. |
+| 7 | No | La estimación de 8 puntos para HU-04 y la capacidad de referencia de 16 puntos solo aparecen en este DOR; no hay un archivo de planificación del sprint que las respalde. |
 | 8 | Sí | CU-01 contempla campos obligatorios incompletos, identificador inválido, incidencia abierta para el elemento y archivos no permitidos. Evidencia: excepciones E1-E4 de CU-01. |
 | 9 | Sí | Los requisitos aplicables están definidos en RNF-06, RNF-08 y RNF-11: duración del registro, rendimiento y mensajes de validación. |
 
@@ -61,10 +61,10 @@ _Elegir TRES historias de usuario del trabajo del primer semestre y pasarlas por
 |-------------------------|--------|--------------------------|
 | 1 | Sí | Los criterios de aceptación de HU-10 permiten comprobar la selección y el guardado de una prioridad. Evidencia: `historias-de-usuario.md`, HU-10. |
 | 2 | Sí | La asignación directa de prioridad es consistente con las opciones acordadas: Baja, Media, Alta y Vital. Evidencia: RF-11 y CU-04. |
-| 3 | Sí | El stakeholder validó la necesidad y la regla de prioridad del RF-11 durante el relevamiento; consta en la minuta del equipo. |
+| 3 | No | El repositorio no incluye una minuta ni otra evidencia que permita comprobar la validación del stakeholder. |
 | 4 | Sí | HU-10 identifica el beneficio: asignar prioridades ayuda a ordenar la atención de las incidencias. |
 | 5 | Sí | La historia puede trabajarse sobre incidencias ya registradas y no depende de completar otra historia dentro del mismo sprint. |
-| 6 | Sí | Se definieron pruebas con incidencias sin prioridad y con una prioridad previa, verificando la asignación de Baja, Media, Alta y Vital, la actualización de una prioridad y el intento de guardar sin seleccionar una opción. |
-| 7 | Sí | El equipo estimó HU-10 en 3 puntos con la escala Fibonacci. La planificación de las tres historias suma 14 puntos, dentro de la capacidad de referencia de 16 puntos para el sprint. |
+| 6 | No | Los escenarios de prueba se mencionan en este DOR, pero el repositorio no incluye casos de prueba documentados ni datos preparados para comprobarlos. |
+| 7 | No | La estimación de 3 puntos para HU-10 y la capacidad de referencia de 16 puntos solo aparecen en este DOR; no hay un archivo de planificación del sprint que las respalde. |
 | 8 | Sí | HU-10 define que, si no se selecciona una prioridad, “Guardar” permanece deshabilitado y la incidencia no se modifica. Evidencia: criterios de aceptación de HU-10 y excepción E1 de CU-04. |
 | 9 | Sí | RNF-08 y el campo Rendimiento de CU-04 definen el tiempo máximo para guardar cambios con hasta 50 usuarios conectados. |
