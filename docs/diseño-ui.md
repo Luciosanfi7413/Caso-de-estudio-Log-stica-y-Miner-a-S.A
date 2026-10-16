@@ -1039,7 +1039,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU012-registrar-accion-realizada.pdf (pág. 1)]\(../diagramas/wireframes/CU012-registrar-accion-realizada.pdf)
+**\*\*Wireframe:\*\*** [CU012-registrar-accion-realizada.pdf (pág. 1)](../diagramas/wireframes/CU012-registrar-accion-realizada.pdf)
 
 
 
@@ -1059,7 +1059,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU012-registrar-accion-realizada.pdf (pág. 2)]\(../diagramas/wireframes/CU012-registrar-accion-realizada.pdf)
+**\*\*Wireframe:\*\*** [CU012-registrar-accion-realizada.pdf (pág. 2)](../diagramas/wireframes/CU012-registrar-accion-realizada.pdf)
 
 
 
@@ -1083,7 +1083,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU012-registrar-accion-realizada.pdf (pág. 3)]\(../diagramas/wireframes/CU012-registrar-accion-realizada.pdf)
+**\*\*Wireframe:\*\*** [CU012-registrar-accion-realizada.pdf (pág. 3)](../diagramas/wireframes/CU012-registrar-accion-realizada.pdf)
 
 
 
@@ -1107,7 +1107,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU012-registrar-accion-realizada.pdf (pág. 4)]\(../diagramas/wireframes/CU012-registrar-accion-realizada.pdf)
+**\*\*Wireframe:\*\*** [CU012-registrar-accion-realizada.pdf (pág. 4)](../diagramas/wireframes/CU012-registrar-accion-realizada.pdf)
 
 
 
