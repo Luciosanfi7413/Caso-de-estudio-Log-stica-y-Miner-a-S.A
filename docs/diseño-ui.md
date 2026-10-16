@@ -35,7 +35,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [\`diagramas/wireframes/CU002-consulta-de-incidencias.pdf\`]\(../diagramas/wireframes/CU002-consulta-de-incidencias.pdf)
+**\*\*Wireframe:\*\*** [CU002-consulta-de-incidencias.pdf](../diagramas/wireframes/CU002-consulta-de-incidencias.pdf)
 
 
 
