@@ -133,7 +133,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf (pág. 1)]\(../diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU004-asignar-prioridad-incidencia.pdf (pág. 1)](../diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf)
 
 
 
@@ -159,7 +159,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf (pág. 2)]\(../diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU004-asignar-prioridad-incidencia.pdf (pág. 2)](../diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf)
 
 
 
@@ -187,7 +187,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf (pág. 3)]\(../diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU004-asignar-prioridad-incidencia.pdf (pág. 3)](../diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf)
 
 
 
@@ -213,7 +213,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf (pág. 4)]\(../diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU004-asignar-prioridad-incidencia.pdf (pág. 4)](../diagramas/wireframes/CU004-asignar-prioridad-incidencia.pdf)
 
 
 
@@ -237,7 +237,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf (pág. 1)]\(../diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU005-actualizar-estado-incidencia.pdf (pág. 1)](../diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf)
 
 
 
@@ -263,7 +263,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf (pág. 2)]\(../diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU005-actualizar-estado-incidencia.pdf (pág. 2)](../diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf)
 
 
 
@@ -289,7 +289,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf (pág. 3)]\(../diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU005-actualizar-estado-incidencia.pdf (pág. 3)](../diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf)
 
 
 
@@ -315,7 +315,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf (pág. 4)]\(../diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU005-actualizar-estado-incidencia.pdf (pág. 4)](../diagramas/wireframes/CU005-actualizar-estado-incidencia.pdf)
 
 
 
@@ -339,7 +339,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU006-asignar-responsable.pdf (pág. 1)]\(../diagramas/wireframes/CU006-asignar-responsable.pdf)
+**\*\*Wireframe:\*\*** [CU006-asignar-responsable.pdf (pág. 1)](../diagramas/wireframes/CU006-asignar-responsable.pdf)
 
 
 
@@ -365,7 +365,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU006-asignar-responsable.pdf (pág. 2)]\(../diagramas/wireframes/CU006-asignar-responsable.pdf)
+**\*\*Wireframe:\*\*** [CU006-asignar-responsable.pdf (pág. 2)](../diagramas/wireframes/CU006-asignar-responsable.pdf)
 
 
 
@@ -391,7 +391,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU006-asignar-responsable.pdf (pág. 3)]\(../diagramas/wireframes/CU006-asignar-responsable.pdf)
+**\*\*Wireframe:\*\*** [CU006-asignar-responsable.pdf (pág. 3)](../diagramas/wireframes/CU006-asignar-responsable.pdf)
 
 
 
@@ -415,7 +415,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf (págs. 1 y 2)]\(../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
+**\*\*Wireframe:\*\*** [CU007-gestionar-especialistas-externos.pdf (págs. 1 y 2)](../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
 
 
 
@@ -435,7 +435,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf (pág. 3)]\(../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
+**\*\*Wireframe:\*\*** [CU007-gestionar-especialistas-externos.pdf (pág. 3)](../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
 
 
 
@@ -455,7 +455,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf (págs. 4, 5 y 6)]\(../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
+**\*\*Wireframe:\*\*** [CU007-gestionar-especialistas-externos.pdf (págs. 4, 5 y 6)](../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
 
 
 
@@ -481,7 +481,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf (pág. 7)]\(../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
+**\*\*Wireframe:\*\*** [CU007-gestionar-especialistas-externos.pdf (pág. 7)](../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
 
 
 
@@ -501,7 +501,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf (pág. 8)]\(../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
+**\*\*Wireframe:\*\*** [CU007-gestionar-especialistas-externos.pdf (pág. 8)](../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
 
 
 
@@ -527,7 +527,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf (pág. 9)]\(../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
+**\*\*Wireframe:\*\*** [CU007-gestionar-especialistas-externos.pdf (pág. 9)](../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
 
 
 
@@ -547,7 +547,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf (pág. 10)]\(../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
+**\*\*Wireframe:\*\*** [CU007-gestionar-especialistas-externos.pdf (pág. 10)](../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
 
 
 
@@ -567,7 +567,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf (págs. 11, 12, 13 y 14)]\(../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
+**\*\*Wireframe:\*\*** [CU007-gestionar-especialistas-externos.pdf (págs. 11, 12, 13 y 14)](../diagramas/wireframes/CU007-gestionar-especialistas-externos.pdf)
 
 
 
@@ -595,7 +595,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU008-gestionar-incidencia-especialista-externo.pdf (pág. 1)]\(../diagramas/wireframes/CU008-gestionar-incidencia-especialista-externo.pdf)
+**\*\*Wireframe:\*\*** [CU008-gestionar-incidencia-especialista-externo.pdf (pág. 1)](../diagramas/wireframes/CU008-gestionar-incidencia-especialista-externo.pdf)
 
 
 
@@ -615,7 +615,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU008-gestionar-incidencia-especialista-externo.pdf (pág. 2)]\(../diagramas/wireframes/CU008-gestionar-incidencia-especialista-externo.pdf)
+**\*\*Wireframe:\*\*** [CU008-gestionar-incidencia-especialista-externo.pdf (pág. 2)](../diagramas/wireframes/CU008-gestionar-incidencia-especialista-externo.pdf)
 
 
 
@@ -639,7 +639,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf (pág. 1)]\(../diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU009-seguimiento-y-resolucion-incidencia.pdf (pág. 1)](../diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf)
 
 
 
@@ -659,7 +659,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf (pág. 2)]\(../diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU009-seguimiento-y-resolucion-incidencia.pdf (pág. 2)](../diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf)
 
 
 
@@ -679,7 +679,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf (págs. 3, 4 y 5)]\(../diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU009-seguimiento-y-resolucion-incidencia.pdf (págs. 3, 4 y 5)](../diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf)
 
 
 
@@ -705,7 +705,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf (págs. 6 y 7)]\(../diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU009-seguimiento-y-resolucion-incidencia.pdf (págs. 6 y 7)](../diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf)
 
 
 
@@ -725,7 +725,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf (pág. 8)]\(../diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU009-seguimiento-y-resolucion-incidencia.pdf (pág. 8)](../diagramas/wireframes/CU009-seguimiento-y-resolucion-incidencia.pdf)
 
 
 
@@ -749,7 +749,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU009-secuencia-2-resolucion-final.pdf (págs. 3, 4 y 5)]\(../diagramas/wireframes/CU009-secuencia-2-resolucion-final.pdf)
+**\*\*Wireframe:\*\*** [CU009-secuencia-2-resolucion-final.pdf (págs. 3, 4 y 5)](../diagramas/wireframes/CU009-secuencia-2-resolucion-final.pdf)
 
 
 
@@ -775,7 +775,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU009-secuencia-2-resolucion-final.pdf (págs. 6 y 7)]\(../diagramas/wireframes/CU009-secuencia-2-resolucion-final.pdf)
+**\*\*Wireframe:\*\*** [CU009-secuencia-2-resolucion-final.pdf (págs. 6 y 7)](../diagramas/wireframes/CU009-secuencia-2-resolucion-final.pdf)
 
 
 
@@ -795,7 +795,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU009-secuencia-2-resolucion-final.pdf (pág. 8)]\(../diagramas/wireframes/CU009-secuencia-2-resolucion-final.pdf)
+**\*\*Wireframe:\*\*** [CU009-secuencia-2-resolucion-final.pdf (pág. 8)](../diagramas/wireframes/CU009-secuencia-2-resolucion-final.pdf)
 
 
 
@@ -823,7 +823,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU010-consultar-historial-incidencias.pdf (pág. 1)]\(../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
+**\*\*Wireframe:\*\*** [CU010-consultar-historial-incidencias.pdf (pág. 1)](../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
 
 
 
@@ -843,7 +843,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU010-consultar-historial-incidencias.pdf (pág. 2)]\(../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
+**\*\*Wireframe:\*\*** [CU010-consultar-historial-incidencias.pdf (pág. 2)](../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
 
 
 
@@ -863,7 +863,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU010-consultar-historial-incidencias.pdf (pág. 3)]\(../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
+**\*\*Wireframe:\*\*** [CU010-consultar-historial-incidencias.pdf (pág. 3)](../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
 
 
 
@@ -883,7 +883,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU010-consultar-historial-incidencias.pdf (pág. 4)]\(../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
+**\*\*Wireframe:\*\*** [CU010-consultar-historial-incidencias.pdf (pág. 4)](../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
 
 
 
@@ -903,7 +903,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU010-consultar-historial-incidencias.pdf (págs. 5 y 7)]\(../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
+**\*\*Wireframe:\*\*** [CU010-consultar-historial-incidencias.pdf (págs. 5 y 7)](../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
 
 
 
@@ -923,7 +923,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU010-consultar-historial-incidencias.pdf (pág. 6)]\(../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
+**\*\*Wireframe:\*\*** [CU010-consultar-historial-incidencias.pdf (pág. 6)](../diagramas/wireframes/CU010-consultar-historial-incidencias.pdf)
 
 
 
@@ -943,7 +943,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf (pág. 1)]\(../diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU011-actualizar-estado-incidencia.pdf (pág. 1)](../diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf)
 
 
 
@@ -963,7 +963,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf (pág. 2)]\(../diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU011-actualizar-estado-incidencia.pdf (pág. 2)](../diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf)
 
 
 
@@ -989,7 +989,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf (pág. 3)]\(../diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU011-actualizar-estado-incidencia.pdf (pág. 3)](../diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf)
 
 
 
@@ -1015,7 +1015,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf (pág. 4)]\(../diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf)
+**\*\*Wireframe:\*\*** [CU011-actualizar-estado-incidencia.pdf (pág. 4)](../diagramas/wireframes/CU011-actualizar-estado-incidencia.pdf)
 
 
 
