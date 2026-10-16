@@ -57,7 +57,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [\`diagramas/wireframes/CU003-consultar-incidencias-registradas.pdf\`]\(../diagramas/wireframes/CU003-consultar-incidencias-registradas.pdf) (pág. 1)
+**\*\*Wireframe:\*\*** [CU003-consultar-incidencias-registradas.pdf](../diagramas/wireframes/CU003-consultar-incidencias-registradas.pdf) (pág. 1)
 
 
 
@@ -81,7 +81,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [\`diagramas/wireframes/CU003-consultar-incidencias-registradas.pdf\`]\(../diagramas/wireframes/CU003-consultar-incidencias-registradas.pdf) (pág. 2)
+**\*\*Wireframe:\*\*** [CU003-consultar-incidencias-registradas.pdf](../diagramas/wireframes/CU003-consultar-incidencias-registradas.pdf) (pág. 2)
 
 
 
@@ -105,7 +105,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 
 
-**\*\*Wireframe:\*\*** [\`diagramas/wireframes/CU003-consultar-incidencias-registradas.pdf\`]\(../diagramas/wireframes/CU003-consultar-incidencias-registradas.pdf) (pág. 3)
+**\*\*Wireframe:\*\*** [CU003-consultar-incidencias-registradas.pdf](../diagramas/wireframes/CU003-consultar-incidencias-registradas.pdf) (pág. 3)
 
 
 
