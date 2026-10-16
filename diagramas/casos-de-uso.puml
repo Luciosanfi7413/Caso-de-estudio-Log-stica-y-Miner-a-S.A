@@ -29,9 +29,9 @@ rectangle "Sistema de gestión de incidencias\nLogística y Minería S.A." {
   }
 
   package "Gestión del Especialista Externo" {
-    usecase "CU-08\nGestionar incidencia como\nEspecialista Externo" as CU08
+    usecase "CU-08\nConsultar incidencias asignadas" as CU08
     usecase "CU-11\nActualizar estado de\nincidencia asignada" as CU11
-    usecase "CU-12\nRegistrar acción realizada" as CU12
+    usecase "CU-12\nRegistrar seguimiento de\nincidencia asignada" as CU12
     usecase "CU-13\nInformar que no podrá atender\nuna incidencia asignada" as CU13
   }
 }
